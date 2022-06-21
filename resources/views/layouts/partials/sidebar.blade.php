@@ -4,12 +4,12 @@ class="z-0 flex-shrink-0 hidden w-64 overflow-y-auto bg-white dark:bg-gray-800 m
 >
 <div class="py-4 text-gray-500 dark:text-gray-400">
     <a
-    class="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200"
+    class="ml-6 text-xl font-bold text-gray-800 dark:text-gray-200"
     href="#"
     >
     Pasar Surakarta
     </a>
-    <ul class="mt-6">
+    {{-- <ul class="mt-6">
     <li class="relative px-6 py-3">
         <a
         class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 {{ ($active === "dashboard") ? "dark:text-gray-100 bg-purple-600 border border-transparent rounded-lg focus:outline-none focus:shadow-outline-purple" : "" }}"
@@ -32,15 +32,15 @@ class="z-0 flex-shrink-0 hidden w-64 overflow-y-auto bg-white dark:bg-gray-800 m
         <span class="ml-4">Dashboard</span>
         </a>
     </li>
-    </ul>
-    <ul>
+    </ul> --}}
+    <ul class="mt-8">
     <li class="relative px-6 py-3">
         <span
         class="absolute inset-y-0 left-0 w-1 {{ ($active === "pasar") ? "bg-purple-600" : "" }} rounded-tr-lg rounded-br-lg"
         aria-hidden="true"
         ></span>
         <a
-        class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 {{ ($active === "pasar") ? "dark:text-gray-100 bg-purple-600 border border-transparent rounded-lg focus:outline-none focus:shadow-outline-purple px-2 py-2" : "" }}"
+        class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 {{ ($active === "pasar") ? "dark:text-gray-100 " : "" }}"
         href="/pasar"
         >
         <svg
@@ -64,7 +64,7 @@ class="z-0 flex-shrink-0 hidden w-64 overflow-y-auto bg-white dark:bg-gray-800 m
         aria-hidden="true"
         ></span>
         <a
-        class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 {{ ($active === "tenant") ? "dark:text-gray-100 bg-purple-600 border border-transparent rounded-lg focus:outline-none focus:shadow-outline-purple px-2 py-2" : "" }}"
+        class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 {{ ($active === "tenant") ? "dark:text-gray-100 " : "" }}"
         href="/tenant"
         >
         <svg
@@ -82,13 +82,65 @@ class="z-0 flex-shrink-0 hidden w-64 overflow-y-auto bg-white dark:bg-gray-800 m
         <span class="ml-4">Tenant</span>
         </a>
     </li>
-    {{-- <li class="relative px-6 py-3">
+    <li class="relative px-6 py-3">
+        <span
+        class="absolute inset-y-0 left-0 w-1 {{ ($active === "pemilik") ? "bg-purple-600" : "" }} rounded-tr-lg rounded-br-lg"
+        aria-hidden="true"
+        ></span>
+        <a
+        class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 {{ ($active === "pemilik") ? "dark:text-gray-100 " : "" }}"
+        href="/pemilik"
+        >
+        <svg
+            class="w-5 h-5"
+            aria-hidden="true"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+        >
+            <path d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
+        </svg>
+        <span class="ml-4">Pemilik</span>
+        </a>
+    </li>
+    <li class="relative px-6 py-3">
+        <span
+        class="absolute inset-y-0 left-0 w-1 {{ ($active === "pengelola") ? "bg-purple-600" : "" }} rounded-tr-lg rounded-br-lg"
+        aria-hidden="true"
+        ></span>
+        <a
+        class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 {{ ($active === "pengelola") ? "dark:text-gray-100 " : "" }}"
+        href="/pengelola"
+        >
+        <svg
+            class="w-5 h-5"
+            aria-hidden="true"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+        >
+            <path d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
+        </svg>
+        <span class="ml-4">Pengelola</span>
+        </a>
+    </li>
+    <li class="relative px-6 py-3">
+        <span
+        class="absolute inset-y-0 left-0 w-1 {{ ($active === "riwayat kepemilikan" || $active === "riwayat iuran") ? "bg-purple-600" : "" }} rounded-tr-lg rounded-br-lg"
+        aria-hidden="true"
+        ></span>
         <button
         class="inline-flex items-center justify-between w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
         @click="togglePagesMenu"
         aria-haspopup="true"
         >
-        <span class="inline-flex items-center">
+        <span class="inline-flex items-center {{ ($active === "riwayat kepemilikan" || $active === "riwayat iuran") ? "dark:text-gray-100 " : "" }}">
             <svg
             class="w-5 h-5"
             aria-hidden="true"
@@ -103,7 +155,7 @@ class="z-0 flex-shrink-0 hidden w-64 overflow-y-auto bg-white dark:bg-gray-800 m
                 d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"
             ></path>
             </svg>
-            <span class="ml-4">Pages</span>
+            <span class="ml-4 ">Riwayat</span>
         </span>
         <svg
             class="w-4 h-4"
@@ -132,37 +184,21 @@ class="z-0 flex-shrink-0 hidden w-64 overflow-y-auto bg-white dark:bg-gray-800 m
             <li
             class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
             >
-            <a class="w-full" href="pages/login.html">Login</a>
+            <a class="w-full {{ ($active === "riwayat kepemilikan") ? "dark:text-gray-100 " : "" }}" href="/riwayat-kepemilikan">Riwayat Kepemilikan</a>
             </li>
             <li
             class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
             >
-            <a class="w-full" href="pages/create-account.html">
-                Create account
+            <a class="w-full {{ ($active === "riwayat iuran") ? "dark:text-gray-100 " : "" }}" href="/riwayat-iuran">
+                Riwayat Iuran
             </a>
-            </li>
-            <li
-            class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-            >
-            <a class="w-full" href="pages/forgot-password.html">
-                Forgot password
-            </a>
-            </li>
-            <li
-            class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-            >
-            <a class="w-full" href="pages/404.html">404</a>
-            </li>
-            <li
-            class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-            >
-            <a class="w-full" href="pages/blank.html">Blank</a>
             </li>
         </ul>
         </template>
     </li>
+
     </ul>
-    <div class="px-6 my-6">
+    {{-- <div class="px-6 my-6">
     <button
         class="flex items-center justify-between w-full px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
     >
@@ -172,6 +208,8 @@ class="z-0 flex-shrink-0 hidden w-64 overflow-y-auto bg-white dark:bg-gray-800 m
     </div> --}}
 </div>
 </aside>
+
+
 <!-- Mobile sidebar -->
 <!-- Backdrop -->
 <div
@@ -201,9 +239,9 @@ x-transition:leave-end="opacity-0 transform -translate-x-20"
     class="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200"
     href="#"
     >
-    Windmill
+    Pasar Surakarta
     </a>
-    <ul class="mt-6">
+    {{-- <ul class="mt-6">
     <li class="relative px-6 py-3">
         <a
         class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
@@ -226,15 +264,15 @@ x-transition:leave-end="opacity-0 transform -translate-x-20"
         <span class="ml-4">Dashboard</span>
         </a>
     </li>
-    </ul>
+    </ul> --}}
     <ul>
     <li class="relative px-6 py-3">
         <span
-        class="absolute inset-y-0 left-0 w-1 {{ ($active === "pasar") ? 'bg-purple-600' : '' }}rounded-tr-lg rounded-br-lg"
+        class="absolute inset-y-0 left-0 w-1 {{ ($active === "pasar") ? 'bg-purple-600' : '' }} rounded-tr-lg rounded-br-lg"
         aria-hidden="true"
         ></span>
         <a
-        class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 {{ ($active === "pasar") ? "dark:text-gray-100 bg-purple-600 border border-transparent rounded-lg focus:outline-none focus:shadow-outline-purple px-2 py-2" : "" }}"
+        class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 {{ ($active === "pasar") ? "dark:text-gray-100 " : "" }}"
         href="/pasar"
         >
         <svg
@@ -254,11 +292,12 @@ x-transition:leave-end="opacity-0 transform -translate-x-20"
     </li>
     <li class="relative px-6 py-3">
         <span
-        class="absolute inset-y-0 left-0 w-1 {{ ($active === "tenant") ? 'bg-purple-600' : '' }} rounded-tr-lg rounded-br-lg"
+        class="absolute inset-y-0 left-0 w-1 {{ ($active === "tenant") ? "bg-purple-600" : "" }} rounded-tr-lg rounded-br-lg"
         aria-hidden="true"
         ></span>
+
         <a
-        class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 {{ ($active === "tenant") ? "dark:text-gray-100 bg-purple-600 border border-transparent rounded-lg focus:outline-none focus:shadow-outline-purple px-2 py-2" : "" }}"
+        class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 {{ ($active === "tenant") ? "dark:text-gray-100 " : "" }}"
         href="/tenant"
         >
         <svg
@@ -276,13 +315,67 @@ x-transition:leave-end="opacity-0 transform -translate-x-20"
         <span class="ml-4">Tenant</span>
         </a>
     </li>
-    {{-- <li class="relative px-6 py-3">
+    <li class="relative px-6 py-3">
+        <span
+        class="absolute inset-y-0 left-0 w-1 {{ ($active === "pemilik") ? "bg-purple-600" : "" }} rounded-tr-lg rounded-br-lg"
+        aria-hidden="true"
+        ></span>
+
+        <a
+        class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 {{ ($active === "pemilik") ? "dark:text-gray-100 " : "" }}"
+        href="/pemilik"
+        >
+        <svg
+            class="w-5 h-5"
+            aria-hidden="true"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+        >
+            <path d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
+        </svg>
+        <span class="ml-4">Pemilik</span>
+        </a>
+    </li>
+    <li class="relative px-6 py-3">
+        <span
+        class="absolute inset-y-0 left-0 w-1 {{ ($active === "pengelola") ? "bg-purple-600" : "" }} rounded-tr-lg rounded-br-lg"
+        aria-hidden="true"
+        ></span>
+
+        <a
+        class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 {{ ($active === "pengelola") ? "dark:text-gray-100 " : "" }}"
+        href="/pengelola"
+        >
+        <svg
+            class="w-5 h-5"
+            aria-hidden="true"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+        >
+            <path d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
+        </svg>
+        <span class="ml-4">Pengelola</span>
+        </a>
+    </li>
+    <li class="relative px-6 py-3">
+        <span
+        class="absolute inset-y-0 left-0 w-1 {{ ($active === "riwayat iuran" || $active === "riwayat kepemilikan") ? "bg-purple-600" : "" }} rounded-tr-lg rounded-br-lg"
+        aria-hidden="true"
+        ></span>
         <button
         class="inline-flex items-center justify-between w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
         @click="togglePagesMenu"
         aria-haspopup="true"
         >
-        <span class="inline-flex items-center">
+        <span class="inline-flex items-center {{ ($active === "riwayat iuran" || $active === "riwayat kepemilikan") ? "dark:text-gray-200" : "" }}">
             <svg
             class="w-5 h-5"
             aria-hidden="true"
@@ -297,7 +390,7 @@ x-transition:leave-end="opacity-0 transform -translate-x-20"
                 d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"
             ></path>
             </svg>
-            <span class="ml-4">Pages</span>
+            <span class="ml-4">Riwayat</span>
         </span>
         <svg
             class="w-4 h-4"
@@ -326,35 +419,20 @@ x-transition:leave-end="opacity-0 transform -translate-x-20"
             <li
             class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
             >
-            <a class="w-full" href="pages/login.html">Login</a>
-            </li>
-            <li
-            class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-            >
-            <a class="w-full" href="pages/create-account.html">
-                Create account
+            <a class="w-full {{ ($active === "riwayat kepemilikan") ? "dark:text-gray-100 " : "" }}" href="/riwayat-kepemilikan">
+                Riwayat Kepemilikan
             </a>
             </li>
             <li
             class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
             >
-            <a class="w-full" href="pages/forgot-password.html">
-                Forgot password
+            <a class="w-full {{ ($active === "riwayat iuran") ? "dark:text-gray-100 " : "" }}" href="/riwayat-iuran">
+                Riwayat Iuran
             </a>
-            </li>
-            <li
-            class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-            >
-            <a class="w-full" href="pages/404.html">404</a>
-            </li>
-            <li
-            class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-            >
-            <a class="w-full" href="pages/blank.html">Blank</a>
             </li>
         </ul>
         </template>
-    </li> --}}
+    </li>
     </ul>
     {{-- <div class="px-6 my-6">
     <button
