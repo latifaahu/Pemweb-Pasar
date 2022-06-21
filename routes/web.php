@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\PasarController;
+use App\Http\Controllers\PemilikController;
+use App\Http\Controllers\PengelolaController;
 use App\Http\Controllers\TenantController;
 use Illuminate\Support\Facades\Route;
 
@@ -33,9 +35,25 @@ Route::get('/tenant/{tenant}/edit', [TenantController::class, 'edit']);
 Route::put('/tenant/{tenant}', [TenantController::class, 'update']);
 Route::get('/tenant/{tenant}/delete', [TenantController::class, 'destroy']);
 
+// bagian pemilik
+Route::get('/pemilik', [PemilikController::class, 'index']);
+
+
+
+
+
+
+// bagian pengelola
+Route::get('/pengelola', [PengelolaController::class, 'index']);
+
+
+
+
+
+
+
 Route::get('/modals', function () {
    return view('modals', [
     "active" => ""
    ]);
 });
-
