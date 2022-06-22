@@ -62,3 +62,5 @@ Route::get('/modals', function () {
     "active" => ""
    ]);
 });
+
+Route::get('/pasar/{pasar}/info', [PasarController::class, 'info']);

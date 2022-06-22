@@ -14,4 +14,8 @@ class Pasar extends Model
         'created_by',
         'edited_by'
     ];
+
+    public function pengelola() {
+        return $this->hasOne(Pengelola::class, 'pasar_id', 'id');
+    }
 }

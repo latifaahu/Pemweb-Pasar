@@ -46,7 +46,7 @@
                 </td>
                 <td class="px-4 py-3 w-4 flex-initial">
                     <div class="flex items-center space-x-4 text-sm">
-                        <a href="/pasar/{{ $pasar->id }}"
+                        <a href="/pasar/{{ $pasar->id }}/info"
                         class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
                         aria-label="View"
                         >
