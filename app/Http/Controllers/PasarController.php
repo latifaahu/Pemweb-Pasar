@@ -83,4 +83,14 @@ class PasarController extends Controller
         return redirect('/pasar')->with('status', 'Pasar berhasil dihapus!');
 
     }
+
+    public function info(Pasar $pasar)
+    {
+        return view('pasar.info-pasar', [
+            "title" => "Informasi Pasar",
+            "active" => 'pasar',
+            "pasar" => $pasar
+        ]);
+    }
+
 }
