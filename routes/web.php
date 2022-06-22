@@ -37,7 +37,12 @@ Route::get('/tenant/{tenant}/delete', [TenantController::class, 'destroy']);
 
 // bagian pemilik
 Route::get('/pemilik', [PemilikController::class, 'index']);
-
+Route::post('/pemilik', [PemilikController::class, 'store']);
+Route::get('/pemilik/create', [PemilikController::class, 'create']);
+Route::get('/pemilik/{pemilik}/edit', [PemilikController::class, 'edit']);
+Route::put('/pemilik/{pemilik}', [PemilikController::class, 'update']);
+Route::get('/pemilik/{pemilik}/view', [PemilikController::class, 'view']);
+Route::get('/pemilik/{pemilik}/delete', [PemilikController::class, 'destroy']);
 
 
 
