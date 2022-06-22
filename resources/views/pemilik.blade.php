@@ -12,12 +12,12 @@
         </h2>
 
         <div class="flex px-0 my-6 space-x-3">
-            @include('components.add-btn', ['url' => 'tenant', 'btn' => 'Pemilik'])
+            @include('components.add-btn', ['url' => 'pemilik', 'btn' => 'Pemilik'])
             @include('components.search-input')
         </div>
     </div>
 
-    {{-- <div class="w-full overflow-hidden rounded-lg shadow-xs">
+    <div class="w-full overflow-hidden rounded-lg shadow-xs">
         <div class="w-full overflow-x-auto">
         <table class="w-full whitespace-no-wrap">
             <thead>
@@ -25,36 +25,44 @@
                 class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"
             >
                 <th class="px-4 py-3">No</th>
-                <th class="px-4 py-3">Nama Tenant</th>
                 <th class="px-4 py-3">Nama Pemilik</th>
-                <th class="px-4 py-3">Nama Pasar</th>
-                <th class="px-4 py-3">Biaya Iuran</th>
+                <th class="px-4 py-3">Alamat</th>
+                <th class="px-4 py-3">NIK</th>
+                <th class="px-4 py-3">No WA</th>
+                <th class="px-4 py-3">No Telephone</th>
+                <th class="px-4 py-3">Created By</th>
                 <th class="px-4 py-3">Actions</th>
             </tr>
             </thead>
             <tbody
             class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
             >
-            @foreach ($tenants as $tenant)
+            @foreach ($pemiliks as $pemilik)
             <tr class="text-gray-700 dark:text-gray-400">
                 <td class="px-4 py-3">
                     {{ $loop->iteration }}
                 </td>
                 <td class="px-4 py-3 text-sm flex-initial w-16">
-                    {{ $tenant->nama_tenant }}
+                    {{ $pemilik->nama }}
                 </td>
                 <td class="px-4 py-3 text-sm flex-initial w-16">
-                    {{ $tenant->pemilik }}
+                    {{ $pemilik->alamat }}
                 </td>
                 <td class="px-4 py-3 text-sm flex-initial w-16">
-                    {{ $tenant->pasar->nama_pasar }}
+                    {{ $pemilik->nik }}
                 </td>
                 <td class="px-4 py-3 text-sm flex-initial">
-                    {{ $tenant->biaya_iuran }}
+                    {{ $pemilik->no_wa }}
+                </td>
+                <td class="px-4 py-3 text-sm flex-initial">
+                    {{ $pemilik->no_telp }}
+                </td>
+                <td class="px-4 py-3 text-sm flex-initial">
+                    {{ $pemilik->created_by}}
                 </td>
                 <td class="px-4 py-3 w-4 flex-initial">
                     <div class="flex items-center space-x-4 text-sm">
-                        <a href="/tenant/{{ $tenant->id }}"
+                        <a href="/"
                         class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
                         aria-label="View"
                         >
@@ -68,7 +76,7 @@
                             <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
                         </svg>
                         </a>
-                        <a href="/tenant/{{ $tenant->id }}/edit"
+                        <a href=""
                         class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
                         aria-label="Edit"
                         >
@@ -84,7 +92,7 @@
                         </svg>
                         </a>
 
-                        <form method="GET" action="/tenant/{{ $tenant->id }}/delete"  >
+                        <form method="GET" action="/"  >
                             @csrf
                             <button class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray">
                                 <svg
@@ -205,7 +213,7 @@
             </nav>
         </span>
         </div>
-    </div> --}}
+    </div>
     </div>
 </main>
 @endsection

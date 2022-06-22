@@ -15,6 +15,12 @@ return new class extends Migration
     {
         Schema::create('pemiliks', function (Blueprint $table) {
             $table->id();
+            $table->string('nama');
+            $table->string('alamat');
+            $table->string('nik');
+            $table->string('no_wa');
+            $table->string('no_telp');
+            $table->string('created_by');
             $table->timestamps();
         });
     }

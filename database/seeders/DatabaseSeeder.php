@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use App\Models\Pasar;
 use App\Models\Pengelola;
+use App\Models\Pemilik;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
@@ -62,6 +63,10 @@ class DatabaseSeeder extends Seeder
             "user_id" => 2,
             "pasar_id" => 3,
             "created_by" => "Latifah"
+        ]);
+
+        $this->call([
+            PemilikSeeder::class,
         ]);
     }
 }
