@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pasar;
 use App\Models\Pengelola;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class PengelolaController extends Controller
@@ -23,5 +25,72 @@ class PengelolaController extends Controller
             "active" => 'pengelola',
             "pengelolas" => $pengelolas
         ]);
+    }
+
+    public function create()
+    {
+        $users = User::get();
+        $pasars = Pasar::get();
+
+        return view('pengelola.create-pengelola', [
+            "title" => "Tambah Pengelola",
+            "active" => 'pengelola',
+            "users" => $users,
+            "pasars" => $pasars,
+        ]);
+    }
+
+    public function store(Request $request) {
+
+        $request->validate([
+            'user' => 'required',
+            'pasar' => 'required'
+        ]);
+
+        Pengelola::firstOrCreate([
+            'user_id' => $request['user'],
+            'pasar_id' => $request['pasar'],
+            'created_by' => $request['created_by']
+        ]);
+
+        return redirect('/pengelola')->with('status', 'Pengelola berhasil ditambahkan!');
+    }
+
+    public function edit(Pengelola $pengelola)
+    {
+        $users = User::get();
+        $pasars = Pasar::get();
+
+        return view('pengelola.edit-pengelola', [
+            "title" => "Tambah Pengelola",
+            "active" => 'pengelola',
+            "pengelola" => $pengelola,
+            "users" => $users,
+            "pasars" => $pasars
+        ]);
+    }
+
+    public function update(Pengelola $pengelola)
+    {
+        request()->validate([
+            'user' => 'required',
+            'pasar' => 'required'
+        ]);
+
+        $pengelola->update([
+            'user_id' => request('user'),
+            'pasar_id' => request('pasar'),
+            'edited_by' => request('edited_by')
+        ]);
+
+        return redirect('/pengelola')->with('status', 'Pengelola berhasil diupdate!');
+    }
+
+    public function destroy(Pengelola $pengelola)
+    {
+        $pengelola->delete();
+
+        return redirect('/pengelola')->with('status', 'Pengelola berhasil dihapus!');
+
     }
 }

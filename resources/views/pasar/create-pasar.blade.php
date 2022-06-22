@@ -37,7 +37,7 @@
                     </label>
                 </div>
                 <div class="hidden">
-                    <label class="block mt-4 text-sm" for="created_by">
+                    <label class="block mt-4 text-sm" for="edited_by">
                         <input id="edited_by" name="edited_by" value="latifah"/>
                     </label>
                 </div>

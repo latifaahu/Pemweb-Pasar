@@ -45,11 +45,11 @@ Route::get('/pemilik', [PemilikController::class, 'index']);
 
 // bagian pengelola
 Route::get('/pengelola', [PengelolaController::class, 'index']);
-
-
-
-
-
+Route::post('/pengelola', [PengelolaController::class, 'store']);
+Route::get('/pengelola/create', [PengelolaController::class, 'create']);
+Route::get('/pengelola/{pengelola}/edit', [PengelolaController::class, 'edit']);
+Route::put('/pengelola/{pengelola}', [PengelolaController::class, 'update']);
+Route::get('/pengelola/{pengelola}/delete', [PengelolaController::class, 'destroy']);
 
 
 Route::get('/modals', function () {

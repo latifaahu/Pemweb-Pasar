@@ -2,9 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use App\Models\Pasar;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Pengelola;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,7 +17,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        User::factory(10)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
@@ -47,6 +49,18 @@ class DatabaseSeeder extends Seeder
         Pasar::firstOrCreate([
             "nama_pasar" => "Pasar Klithikan Notohardjo",
             "alamat" =>"Jalan Sungai Serang I No.313, Kecamatan Pasar Kliwon, Kota Surakarta",
+            "created_by" => "Latifah"
+        ]);
+
+        Pengelola::firstOrCreate([
+            "user_id" => 1,
+            "pasar_id" => 1,
+            "created_by" => "Latifah"
+        ]);
+
+        Pengelola::firstOrCreate([
+            "user_id" => 2,
+            "pasar_id" => 3,
             "created_by" => "Latifah"
         ]);
     }

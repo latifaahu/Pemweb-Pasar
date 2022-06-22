@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('user_id');
             $table->foreignId('pasar_id');
             $table->string('created_by');
-            $table->string('edited_by');
+            $table->string('edited_by')->nullable();
             $table->timestamps();
         });
     }
