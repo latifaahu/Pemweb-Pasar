@@ -44,7 +44,9 @@ class TenantController extends Controller
             'nama' => 'required|max:255|min:2',
             'pasar' => 'required',
             'pemilik' => 'required',
-            'biaya_iuran' => 'required|integer'
+            'biaya_iuran' => 'required|integer',
+            'longitude' => 'required',
+            'latitude' => 'required'
         ]);
 
         Tenant::firstOrCreate([
@@ -52,9 +54,52 @@ class TenantController extends Controller
             'pasar_id' => $request['pasar'],
             'pemilik' =>  $request['pemilik'],
             'biaya_iuran' =>(int) $request['biaya_iuran'],
-            'created_by' => $request['created_by']
+            'created_by' => $request['created_by'],
+            'longitude' => $request['longitude'],
+            'latitude' => $request['latitude']
         ]);
 
         return redirect('/tenant')->with('status', 'Tenant berhasil ditambahkan!');
     }
+    public function edit(Tenant $tenant)
+    {
+        return view('tenant.edit-tenant', [
+            "title" => "Tambah Tenant",
+            "active" => 'tenant',
+            "tenants" => $tenant,
+        ]);
+    }
+
+    public function update(Tenant $tenant)
+    {
+        request()->validate([
+            'nama' => 'required|max:255|min:2',
+            'pasar' => 'required',
+            'pemilik' => 'required',
+            'biaya_iuran' => 'required|integer',
+            'longitude' => 'required',
+            'latitude' => 'required'
+        ]);
+
+        $tenant->update([
+            'nama_tenant' => request('nama'),
+            'pasar_id' => request('pasar'),
+            'pemilik' =>  request('pemilik'),
+            'biaya_iuran' =>(int) request('biaya_iuran'),
+            'created_by' => request('created_by'),
+            'longitude' => request('longitude'),
+            'latitude' => request('latitude')
+        ]);
+
+        return redirect('/tenant')->with('status', 'Tenant berhasil diupdate!');
+    }
+
+    public function destroy(Tenant $tenant)
+    {
+        $tenant->delete();
+
+        return redirect('/tenant')->with('status', 'Tenant berhasil dihapus!');
+
+    }
+
 }

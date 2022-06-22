@@ -7,8 +7,8 @@
         <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">Tambah Tenant</h2>
 
         <div class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
-            <form method="POST" action="/tenant">
-
+            <form method="POST" action="/tenant/{{ $tenants->id }}">
+                @method('PUT')
                 @csrf
 
                 <div class="mb-4">
@@ -16,7 +16,7 @@
                         <span class="text-gray-700 dark:text-gray-400 mb-3">Nama Tenant</span>
                         <input
                             class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:ring border-purple-400 focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input rounded-md h-8 px-3 py-4 border border-solid"
-                            placeholder="Nama Tenant" id="nama" name="nama" required
+                            placeholder="Nama Tenant" id="nama" name="nama" value="{{$tenants->nama_tenant}}" required 
                         />
                     </label>
                 </div>
@@ -29,8 +29,8 @@
                         <select name="pasar" id="pasar"
                         class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
                         required >
-                            @foreach ($pasars as $pasar)
-                                <option value="{{$pasar->id}}" class="w-full rounded-lg bg-grey-200" >{{$pasar->nama_pasar}}</option>
+                            @foreach ($tenants->pasar as $pasar)
+                                <option value="{{$tenants->pasar->id}}" class="w-full rounded-lg bg-grey-200" >{{$tenants->pasar->nama_pasar}}</option>
                             @endforeach
                         </select>
                     </label>
@@ -41,7 +41,7 @@
                         <span class="text-gray-700 dark:text-gray-400 mb-3">Nama Pemilik</span>
                         <input
                             class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:ring border-purple-400 focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input rounded-md h-8 px-3 py-4 border border-solid"
-                            placeholder="Nama Pemilik" id="pemilik" name="pemilik" required
+                            placeholder="Nama Pemilik" id="pemilik" name="pemilik" value="{{$tenants->pemilik}}" required
                         />
                     </label>
                 </div>
@@ -51,7 +51,7 @@
                         <span class="text-gray-700 dark:text-gray-400 mb-3">Biaya Iuran</span>
                         <input
                             class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:ring border-purple-400 focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input rounded-md h-8 px-3 py-4 border border-solid"
-                            placeholder="Biaya Iuran" id="biaya_iuran" name="biaya_iuran" required
+                            placeholder="Biaya Iuran" id="biaya_iuran" name="biaya_iuran" value="{{$tenants->biaya_iuran}}" required
                         />
                     </label>
                 </div>
@@ -61,7 +61,7 @@
                         <span class="text-gray-700 dark:text-gray-400 mb-3">Longitude</span>
                         <input
                             class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:ring border-purple-400 focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input rounded-md h-8 px-3 py-4 border border-solid"
-                            placeholder="Longitude" id="longitude" name="longitude" required
+                            placeholder="Longitude" id="longitude" name="longitude" value="{{$tenants->longitude}}" required
                         />
                     </label>
                 </div>
@@ -71,7 +71,7 @@
                         <span class="text-gray-700 dark:text-gray-400 mb-3">Latitude</span>
                         <input
                             class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:ring border-purple-400 focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input rounded-md h-8 px-3 py-4 border border-solid"
-                            placeholder="latitude" id="latitude" name="latitude" required
+                            placeholder="latitude" id="latitude" name="latitude" value="{{$tenants->latitude}}" required
                         />
                     </label>
                 </div>
@@ -91,7 +91,7 @@
                 <button
                   class="px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
                 >
-                  Tambah
+                  Simpan
                 </button>
             </form>
         </div>

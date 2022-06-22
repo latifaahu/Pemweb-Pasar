@@ -29,6 +29,8 @@
                 <th class="px-4 py-3">Nama Pemilik</th>
                 <th class="px-4 py-3">Nama Pasar</th>
                 <th class="px-4 py-3">Biaya Iuran</th>
+                <th class="px-4 py-3">Longitude</th>
+                <th class="px-4 py-3">Latitude</th>
                 <th class="px-4 py-3">Actions</th>
             </tr>
             </thead>
@@ -51,6 +53,12 @@
                 </td>
                 <td class="px-4 py-3 text-sm flex-initial">
                     {{ $tenant->biaya_iuran }}
+                </td>
+                <td class="px-4 py-3 text-sm flex-initial">
+                    {{ $tenant->longitude }}
+                </td>
+                <td class="px-4 py-3 text-sm flex-initial">
+                    {{ $tenant->latitude }}
                 </td>
                 <td class="px-4 py-3 w-4 flex-initial">
                     <div class="flex items-center space-x-4 text-sm">

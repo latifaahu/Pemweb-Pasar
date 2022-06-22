@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('nama_tenant');
             $table->string('pemilik');
             $table->unsignedBigInteger('biaya_iuran');
+            $table->string('longitude');
+            $table->string('latitude');
             $table->string('created_by');
             $table->string('edited_by')->nullable();
             $table->timestamps();
