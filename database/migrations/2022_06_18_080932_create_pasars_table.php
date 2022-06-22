@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('nama_pasar');
             $table->string('alamat');
             $table->string('created_by');
+            $table->string('edited_by')->nullable();
             $table->timestamps();
         });
     }

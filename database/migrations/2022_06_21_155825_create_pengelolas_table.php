@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('pengelolas', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id');
+            $table->foreignId('pasar_id');
+            $table->string('created_by');
+            $table->string('edited_by');
             $table->timestamps();
         });
     }

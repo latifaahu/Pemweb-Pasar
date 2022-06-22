@@ -36,6 +36,11 @@
                         <input id="created_by" name="created_by" value="latifah"/>
                     </label>
                 </div>
+                <div class="hidden">
+                    <label class="block mt-4 text-sm" for="created_by">
+                        <input id="edited_by" name="edited_by" value="latifah"/>
+                    </label>
+                </div>
 
                 <a href="/pasar"
                     class="px-4 py-2 mr-3 text-sm font-medium leading-5 text-white  transition-colors duration-150 border border-gray-300 rounded-lg dark:text-gray-400 sm:px-4 sm:py-2 sm:w-auto active:bg-transparent hover:border-gray-500 focus:border-gray-500 active:text-gray-500 focus:outline-none focus:shadow-outline-gray"

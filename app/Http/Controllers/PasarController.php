@@ -70,7 +70,7 @@ class PasarController extends Controller
         $pasar->update([
             'nama_pasar' => request('nama'),
             'alamat' => request('alamat'),
-            'created_by' => request('created_by')
+            'edited_by' => request('edited_by')
         ]);
 
         return redirect('/pasar')->with('status', 'Pasar berhasil diupdate!');

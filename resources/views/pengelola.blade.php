@@ -12,7 +12,7 @@
         </h2>
 
         <div class="flex px-0 my-6 space-x-3">
-            @include('components.add-btn', ['url' => 'tenant', 'btn' => 'Tenant'])
+            @include('components.add-btn', ['url' => 'tenant', 'btn' => 'Pengelola'])
             @include('components.search-input')
         </div>
     </div>

@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('pemilik');
             $table->unsignedBigInteger('biaya_iuran');
             $table->string('created_by');
+            $table->string('edited_by')->nullable();
             $table->timestamps();
         });
     }

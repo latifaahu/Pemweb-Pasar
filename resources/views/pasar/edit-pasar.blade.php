@@ -32,8 +32,8 @@
                     </label>
                 </div>
                 <div class="hidden">
-                    <label class="block mt-4 text-sm" for="created_by">
-                        <input id="created_by" name="created_by" value="{{ $pasar->created_by }}"/>
+                    <label class="block mt-4 text-sm" for="edited_by">
+                        <input id="edited_by" name="edited_by" value="latifah edit"/>
                     </label>
                 </div>
 
