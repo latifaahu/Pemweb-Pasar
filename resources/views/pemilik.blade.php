@@ -2,6 +2,7 @@
 
 @section('content')
 
+
 <main class="h-full pb-16 overflow-y-auto">
     <div class="container grid px-6 mx-auto">
     <div class="flex justify-between w-full">
@@ -61,6 +62,7 @@
                     {{ $pemilik->created_by}}
                 </td>
                 <td class="px-4 py-3 w-4 flex-initial">
+                    @auth
                     <div class="flex items-center space-x-4 text-sm">
                         <a href="/pemilik/{{ $pemilik->id}}/view"
                         class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
@@ -110,6 +112,7 @@
                             </button>
                         </form>
                     </div>
+                    @endauth
                 </td>
             </tr>
             @endforeach
