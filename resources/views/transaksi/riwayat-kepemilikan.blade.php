@@ -12,8 +12,8 @@
         </h2>
 
         <div class="flex px-0 my-6 space-x-3">
-            @include('components.add-btn', ['url' => 'pengelola', 'btn' => 'Pengelola'])
-            @include('components.search-input', ['url' => 'pengelola'])
+            @include('components.add-btn', ['url' => 'riwayat-kepemilikan', 'btn' => 'Transaksi Tenant'])
+            @include('components.search-input', ['url' => 'riwayat-kepemilikan'])
         </div>
     </div>
 
@@ -25,9 +25,10 @@
                 class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"
             >
                 <th class="px-4 py-3">No</th>
-                <th class="px-4 py-3">Nama Pengelola</th>
+                <th class="px-4 py-3">Nama Tenant</th>
                 <th class="px-4 py-3">Nama Pasar</th>
-                {{-- <th class="px-4 py-3">Alamat</th> --}}
+                <th class="px-4 py-3">Pemilik Lama</th>
+                <th class="px-4 py-3">Pemilik Baru</th>
                 <th class="px-4 py-3">Actions</th>
             </tr>
             </thead>

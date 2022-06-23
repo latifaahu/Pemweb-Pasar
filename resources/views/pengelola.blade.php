@@ -12,7 +12,9 @@
         </h2>
 
         <div class="flex px-0 my-6 space-x-3">
+            @auth
             @include('components.add-btn', ['url' => 'pengelola', 'btn' => 'Pengelola'])
+            @endauth
             @include('components.search-input', ['url' => 'pengelola'])
         </div>
     </div>
@@ -20,6 +22,12 @@
     <div class="w-full overflow-hidden rounded-lg shadow-xs">
         <div class="w-full overflow-x-auto">
         <table class="w-full whitespace-no-wrap">
+            <colgroup>
+                <col span="1" style="width: 5%;">
+                <col span="1" style="width: 30%;">
+                <col span="1" style="width: 40%;">
+                <col span="1" style="width: 20%;">
+            </colgroup>
             <thead>
             <tr
                 class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"
@@ -50,6 +58,7 @@
                 </td> --}}
                 <td class="px-4 py-3 w-4 flex-initial">
                     <div class="flex items-center space-x-4 text-sm">
+
                         <a href="/pengelola/{{ $pengelola->id }}/view"
                         class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
                         aria-label="View"
@@ -64,6 +73,7 @@
                             <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
                         </svg>
                         </a>
+                        @auth
                         <a href="/pengelola/{{ $pengelola->id }}/edit"
                         class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
                         aria-label="Edit"
@@ -97,6 +107,7 @@
                                 </svg>
                             </button>
                         </form>
+                        @endauth
                     </div>
                 </td>
             </tr>
