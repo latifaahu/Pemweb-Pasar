@@ -24,7 +24,7 @@ class Tenant extends Model
     public function pasar() { //menghubungkan model Tenant dengan model Pasar
         return $this->belongsTo(Pasar::class); //mengembalikan relasi dari model Tenant terhadap model Pasar [dalam case ini, 1 tenant punya 1 pasar. jadi pake belongsTo(Pasar)]
     }
-    public function pemilik() { //menghubungkan model Tenant dengan model Pasar
-        return $this->belongsTo(Pemilik::class); //mengembalikan relasi dari model Tenant terhadap model Pasar [dalam case ini, 1 tenant punya 1 pasar. jadi pake belongsTo(Pasar)]
+    public function pemilik() { 
+        return $this->belongsTo(Pemilik::class); 
     }
 }

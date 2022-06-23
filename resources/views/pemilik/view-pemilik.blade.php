@@ -12,46 +12,46 @@
                     <table class="w-full whitespace-no-wrap">
                         <tbody>
                             <tr class="text-gray-700 dark:text-gray-400">
-                            <td class="px-4 py-1">Nama </td>
+                            <td class="px-4 py-1 font-semibold">Nama </td>
                             <td class="px-1 py-1">:</td>
                             <td class="px-1 py-1">{{ $pemilik->nama }}</td>
                             </tr>
                             <tr class="text-gray-700 dark:text-gray-400">
-                            <td class="px-4 py-1">Alamat </td>
-                            <td class="px-1 py-1">:</td>
+                            <td class="px-4 py-1 font-semibold">Alamat </td>
+                            <td class="px-1 py-1 ">:</td>
                             <td class="px-1 py-1">{{ $pemilik->alamat }}</td>
                             </tr>
                             <tr class="text-gray-700 dark:text-gray-400">
-                            <td class="px-4 py-1">NIK </td>
+                            <td class="px-4 py-1 font-semibold">NIK </td>
                             <td class="px-1 py-1">:</td>
                             <td class="px-1 py-1">{{ $pemilik->nik }}</td>
                             </tr>
 
                             <tr class="text-gray-700 dark:text-gray-400">
-                            <td class="px-4 py-1">No WhatsApp </td>
+                            <td class="px-4 py-1 font-semibold">No WhatsApp </td>
                             <td class="px-1 py-1">:</td>
                             <td class="px-1 py-1">{{ $pemilik->no_wa }}</td>
                             </tr>
                             
                             <tr class="text-gray-700 dark:text-gray-400">
-                            <td class="px-4 py-1">No Telephone </td>
+                            <td class="px-4 py-1 font-semibold">No Telephone </td>
                             <td class="px-1 py-1">:</td>
                             <td class="px-1 py-1">{{ $pemilik->no_telp }}</td>
                             </tr>
 
                             <tr class="text-gray-700 dark:text-gray-400">
-                            <td class="px-4 py-1">Dibuat Oleh</td>
+                            <td class="px-4 py-1 font-semibold">Dibuat Oleh</td>
                             <td class="px-1 py-1">:</td>
                             <td class="px-1 py-1">{{ $pemilik->created_by }}</td>
                             </tr>
 
                             <tr class="text-gray-700 dark:text-gray-400">
-                            <td class="px-4 py-1">Dibuat Pada</td>
+                            <td class="px-4 py-1 font-semibold">Dibuat Pada</td>
                             <td class="px-1 py-1">:</td>
                             <td class="px-1 py-1">{{ $pemilik->created_at }}</td>
                             </tr>
                             <tr class="text-gray-700 dark:text-gray-400">
-                            <td class="px-4 py-1">Terakhir diedit Pada</td>
+                            <td class="px-4 py-1 font-semibold">Terakhir diedit Pada</td>
                             <td class="px-1 py-1">:</td>
                             <td class="px-1 py-1">{{ $pemilik->created_at }}</td>
                             </tr>
