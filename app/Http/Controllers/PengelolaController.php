@@ -101,4 +101,13 @@ class PengelolaController extends Controller
         return redirect('/pengelola')->with('status', 'Pengelola berhasil dihapus!');
 
     }
+
+    public function info(Pengelola $pengelola)
+    {
+        return view('pengelola.view-pengelola', [
+            "title" => "Informasi Pengelola",
+            "active" => 'pengelola',
+            "pengelola" => $pengelola
+        ]);
+    }
 }

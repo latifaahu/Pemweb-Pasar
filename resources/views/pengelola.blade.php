@@ -27,7 +27,7 @@
                 <th class="px-4 py-3">No</th>
                 <th class="px-4 py-3">Nama Pengelola</th>
                 <th class="px-4 py-3">Nama Pasar</th>
-                <th class="px-4 py-3">Alamat</th>
+                {{-- <th class="px-4 py-3">Alamat</th> --}}
                 <th class="px-4 py-3">Actions</th>
             </tr>
             </thead>
@@ -45,12 +45,12 @@
                 <td class="px-4 py-3 text-sm flex-initial w-16">
                     {{ $pengelola->pasar->nama_pasar }}
                 </td>
-                <td class="px-4 py-3 text-sm flex-initial">
+                {{-- <td class="px-4 py-3 text-sm flex-initial">
                     {{ $pengelola->pasar->alamat }}
-                </td>
+                </td> --}}
                 <td class="px-4 py-3 w-4 flex-initial">
                     <div class="flex items-center space-x-4 text-sm">
-                        <a href="/pengelola/{{ $pengelola->id }}"
+                        <a href="/pengelola/{{ $pengelola->id }}/view"
                         class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
                         aria-label="View"
                         >
