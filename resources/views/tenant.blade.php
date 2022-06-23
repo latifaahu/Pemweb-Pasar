@@ -13,7 +13,7 @@
 
         <div class="flex px-0 my-6 space-x-3">
             @include('components.add-btn', ['url' => 'tenant', 'btn' => 'Tenant'])
-            @include('components.search-input')
+            @include('components.search-input', ['url' => 'tenant'])
         </div>
     </div>
 

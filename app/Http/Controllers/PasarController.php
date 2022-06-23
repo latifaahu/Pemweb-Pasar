@@ -9,18 +9,18 @@ class PasarController extends Controller
 {
     public function index() {
 
-        $pasars = Pasar::get();
+        $pasars = Pasar::latest();
 
         // untuk mwngambil keyword yang dimasukkan dalam search box
         if(request('search')) {
-            $pasars->where('nama', 'like', '%' . request('search') . '%')
-                ->orWhere('alamat', 'like', '%' . request('search') . '%');
+            $pasars->where('nama_pasar', 'like', '%' . request('search') . '%')
+            ->orWhere('alamat', 'like', '%' . request('search') . '%');
         }
 
         return view('pasar', [
             "title" => "Data Pasar",
             "active" => 'pasar',
-            "pasars" => $pasars
+            "pasars" => $pasars->get()
         ]);
     }
 

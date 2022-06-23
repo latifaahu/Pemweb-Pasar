@@ -10,7 +10,7 @@ class TenantController extends Controller
 {
     public function index() {
 
-        $tenants = Tenant::get();
+        $tenants = Tenant::latest();
 
         // untuk mwngambil keyword yang dimasukkan dalam search box
         if(request('search')) {
@@ -21,7 +21,7 @@ class TenantController extends Controller
         return view('tenant', [
             "title" => "Data Tenant",
             "active" => 'tenant',
-            "tenants" => $tenants
+            "tenants" => $tenants->get()
         ]);
     }
 

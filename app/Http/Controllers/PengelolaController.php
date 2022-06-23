@@ -12,7 +12,7 @@ class PengelolaController extends Controller
     //
     public function index() {
 
-        $pengelolas = Pengelola::get();
+        $pengelolas = Pengelola::latest();
 
         // untuk mwngambil keyword yang dimasukkan dalam search box
         if(request('search')) {
@@ -23,7 +23,7 @@ class PengelolaController extends Controller
         return view('pengelola', [
             "title" => "Data Pengelola",
             "active" => 'pengelola',
-            "pengelolas" => $pengelolas
+            "pengelolas" => $pengelolas->get()
         ]);
     }
 
