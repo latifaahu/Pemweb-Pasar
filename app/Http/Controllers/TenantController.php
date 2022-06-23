@@ -74,7 +74,7 @@ class TenantController extends Controller
             "active" => 'tenant',
             "tenants" => $tenant,
             "pasars" => $pasars,
-            "pemiliks" => $pemiliks,
+            "pemiliks" => $pemiliks
         ]);
     }
 
@@ -108,6 +108,20 @@ class TenantController extends Controller
 
         return redirect('/tenant')->with('status', 'Tenant berhasil dihapus!');
 
+    }
+
+    public function info(Tenant $tenant)
+    {
+        $tenants = Tenant::get();
+        $pasars = Pasar::get();
+        $pemiliks = Pemilik::get();
+        return view('tenant.info-tenant', [
+            "title" => "Informasi Tenant",
+            "active" => 'tenant',
+            "tenants" => $tenant,
+            "pasars" => $pasars,
+            "pemiliks" => $pemiliks
+        ]);
     }
 
 }
