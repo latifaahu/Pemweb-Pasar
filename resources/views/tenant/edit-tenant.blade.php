@@ -4,7 +4,7 @@
 
 <main class="h-full pb-16 overflow-y-auto">
     <div class="container grid px-6 mx-auto">
-        <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">Tambah Tenant</h2>
+        <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">Edit Tenant</h2>
 
         <div class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
             <form method="POST" action="/tenant/{{ $tenants->id }}">
@@ -29,20 +29,25 @@
                         <select name="pasar" id="pasar"
                         class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
                         required >
-                            @foreach ($tenants->pasar as $pasar)
-                                <option value="{{$tenants->pasar->id}}" class="w-full rounded-lg bg-grey-200" >{{$tenants->pasar->nama_pasar}}</option>
+                            @foreach ($pasars as $pasar)
+                                <option value="{{$pasar->id}}" class="w-full rounded-lg bg-grey-200" >{{$pasar->nama_pasar}}</option>
                             @endforeach
                         </select>
                     </label>
                 </div>
 
                 <div class="mb-4">
-                    <label class="block text-sm" for="pemilik">
-                        <span class="text-gray-700 dark:text-gray-400 mb-3">Nama Pemilik</span>
-                        <input
-                            class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:ring border-purple-400 focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input rounded-md h-8 px-3 py-4 border border-solid"
-                            placeholder="Nama Pemilik" id="pemilik" name="pemilik" value="{{$tenants->pemilik}}" required
-                        />
+                    <label class="block mt-4 text-sm" for="pemilik">
+                        <span class="text-gray-700 dark:text-gray-400">
+                        Nama Pemilik
+                        </span>
+                        <select name="pemilik" id="pemilik"
+                        class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
+                        required >
+                            @foreach ($pemiliks as $pemilik)
+                                <option value="{{$pemilik->id}}" class="w-full rounded-lg bg-grey-200" >{{$pemilik->nama}}</option>                           
+                            @endforeach
+                        </select>
                     </label>
                 </div>
 

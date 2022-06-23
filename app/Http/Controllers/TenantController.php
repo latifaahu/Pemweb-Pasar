@@ -66,10 +66,15 @@ class TenantController extends Controller
     }
     public function edit(Tenant $tenant)
     {
+        $tenants = Tenant::get();
+        $pasars = Pasar::get();
+        $pemiliks = Pemilik::get();
         return view('tenant.edit-tenant', [
-            "title" => "Tambah Tenant",
+            "title" => "Edit Tenant",
             "active" => 'tenant',
             "tenants" => $tenant,
+            "pasars" => $pasars,
+            "pemiliks" => $pemiliks,
         ]);
     }
 
@@ -87,7 +92,7 @@ class TenantController extends Controller
         $tenant->update([
             'nama_tenant' => request('nama'),
             'pasar_id' => request('pasar'),
-            'pemilik' =>  request('pemilik'),
+            'pemilik_id' =>  request('pemilik'),
             'biaya_iuran' =>(int) request('biaya_iuran'),
             'created_by' => request('created_by'),
             'longitude' => request('longitude'),

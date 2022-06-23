@@ -46,7 +46,7 @@
                     {{ $tenant->nama_tenant }}
                 </td>
                 <td class="px-4 py-3 text-sm flex-initial w-16">
-                    {{ $tenant->pemilik }}
+                    {{ $tenant->pemilik->nama }}
                 </td>
                 <td class="px-4 py-3 text-sm flex-initial w-16">
                     {{ $tenant->pasar->nama_pasar }}

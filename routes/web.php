@@ -31,12 +31,14 @@ Route::put('/pasar/{pasar}', [PasarController::class, 'update']);
 Route::get('/pasar/{pasar}/delete', [PasarController::class, 'destroy']);
 Route::get('/pasar/{pasar}/view', [PasarController::class, 'info']);
 
+// bagian tenant
 Route::get('/tenant', [TenantController::class, 'index']);
 Route::post('/tenant', [TenantController::class, 'store']);
 Route::get('/tenant/create', [TenantController::class, 'create']);
 Route::get('/tenant/{tenant}/edit', [TenantController::class, 'edit']);
 Route::put('/tenant/{tenant}', [TenantController::class, 'update']);
 Route::get('/tenant/{tenant}/delete', [TenantController::class, 'destroy']);
+Route::get('/tenant/{tenant}/view', [TenantController::class, 'info']);
 
 // bagian pemilik
 Route::get('/pemilik', [PemilikController::class, 'index']);
@@ -68,3 +70,7 @@ Route::get('/modals', function () {
 
 Route::get('/riwayat-kepemilikan', [RiwayatKepemilikanController::class, 'index']);
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
