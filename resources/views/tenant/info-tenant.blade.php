@@ -4,7 +4,7 @@
 
 <main class="h-full pb-16 overflow-y-auto">
     <div class="container grid px-6 mx-auto">
-        <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">Informasi {{ $tenant->nama_tenant }}</h2>
+        <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">Informasi {{ $tenants->nama_tenant }}</h2>
 
         <div class="px-4 py-3 mb-8 text-sm text-left dark:text-gray-400 bg-white rounded-lg shadow-md dark:bg-gray-800">
 
@@ -17,47 +17,58 @@
                     <tbody>
                     <tr>
                         <th class="font-semibold">Nama Tenant</th>
-                        <td>: {{ $tenant->nama_tenant }}</td>
+                        <td>: {{ $tenants->nama_tenant }}</td>
                     </tr>
                     <tr>
                         <th class="font-semibold">Nama Pemilik</th>
-                        <td>: {{ $tenant->pemilik->nama }}</td>
+                        <td>: {{ $tenants->pemilik->nama }}</td>
                     </tr>
                     <tr>
                         <th class="font-semibold">Nama Pasar</th>
-                        <td>: {{$tenant->pasar->nama_pasar}}</td>
+                        <td>: {{$tenants->pasar->nama_pasar}}</td>
                     </tr>
                     <tr>
                         <th class="font-semibold">Biaya Iuran</th>
-                        <td>: {{$tenant->biaya_iuran}}</td>
+                        <td>: {{$tenants->biaya_iuran}}</td>
                     </tr>
+                    <tr>
+                        <th class="font-semibold">Koordinat</th>
+                        <td>: {{$tenants->longitude}}, {{$tenants->latitude}}</td>
+                    </tr>
+                    <tr class="h-4"><td></td></tr>
+                    <tr>
+                        <th class="font-semibold">Riwayat</th>
+                        <td><a href="/riwayat-kepemilikan">Riwayat Kepemilikan</a><br>
+                    </tr>
+                        <th class="font-semibold"></th>
+                        <td><a href="/riwayat-iuran">Riwayat Iuran</a><br>
                     <tr class="h-4"><td></td></tr>
                     <tr>
                         <th class="font-semibold">Dibuat oleh</th>
                         <td>
-                            : {{ $pasar->created_by }}
+                            : {{ $tenants->created_by }}
                         </td>
                     </tr>
                     <tr>
                         <th class="font-semibold">Dibuat pada</th>
                         <td>
-                            : {{ $pasar->created_at }}
+                            : {{ $tenants->created_at }}
                         </td>
                     </tr>
                     <tr>
                         <th class="font-semibold">Terakhir diedit oleh</th>
                         <td>
-                            @if(empty($pasar->edited_by))
-                                : {{ $pasar->created_by }}
+                            @if(empty($tenants->edited_by))
+                                : {{ $tenants->created_by }}
                             @else
-                                : {{ $pasar->edited_by }}
+                                : {{ $tenants->edited_by }}
                             @endif
                         </td>
                     </tr>
                     <tr>
                         <th class="font-semibold">Terakhir diedit pada</th>
                         <td>
-                            : {{ $tenant->updated_at }}
+                            : {{ $tenants->updated_at }}
                         </td>
                     </tr>
                     </tbody>
