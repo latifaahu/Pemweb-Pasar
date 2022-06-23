@@ -3,6 +3,8 @@
 use App\Http\Controllers\PasarController;
 use App\Http\Controllers\PemilikController;
 use App\Http\Controllers\PengelolaController;
+use App\Http\Controllers\RiwayatKepemilikan;
+use App\Http\Controllers\RiwayatKepemilikanController;
 use App\Http\Controllers\TenantController;
 use Illuminate\Support\Facades\Route;
 
@@ -64,4 +66,5 @@ Route::get('/modals', function () {
    ]);
 });
 
+Route::get('/riwayat-kepemilikan', [RiwayatKepemilikanController::class, 'index']);
 
