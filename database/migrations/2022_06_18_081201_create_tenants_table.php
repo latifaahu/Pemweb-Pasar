@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('pasar_id');
             $table->string('nama_tenant');
-            $table->string('pemilik');
+            $table->foreignId('pemilik_id');
             $table->unsignedBigInteger('biaya_iuran');
             $table->string('longitude');
             $table->string('latitude');

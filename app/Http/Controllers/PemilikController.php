@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pemilik;
+use App\Models\Tenant;
 use Illuminate\Http\Request;
 
 class PemilikController extends Controller

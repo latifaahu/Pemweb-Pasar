@@ -35,8 +35,21 @@
                         </select>
                     </label>
                 </div>
-
                 <div class="mb-4">
+                    <label class="block mt-4 text-sm" for="pemilik">
+                        <span class="text-gray-700 dark:text-gray-400">
+                        Nama Pemilik
+                        </span>
+                        <select name="pemilik" id="pemilik"
+                        class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
+                        required >
+                            @foreach ($pemiliks as $pemilik)
+                                <option value="{{$pemilik->id}}" class="w-full rounded-lg bg-grey-200" >{{$pemilik->nama}}</option>
+                            @endforeach
+                        </select>
+                    </label>
+                </div>
+                <!-- <div class="mb-4">
                     <label class="block text-sm" for="pemilik">
                         <span class="text-gray-700 dark:text-gray-400 mb-3">Nama Pemilik</span>
                         <input
@@ -44,7 +57,7 @@
                             placeholder="Nama Pemilik" id="pemilik" name="pemilik" required
                         />
                     </label>
-                </div>
+                </div> -->
 
                 <div class="mb-4">
                     <label class="block text-sm" for="biaya_iuran">

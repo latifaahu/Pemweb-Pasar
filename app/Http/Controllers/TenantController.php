@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pasar;
 use App\Models\Tenant;
+use App\Models\Pemilik;
 use Illuminate\Http\Request;
 
 class TenantController extends Controller
@@ -29,12 +30,14 @@ class TenantController extends Controller
     {
         $tenants = Tenant::get();
         $pasars = Pasar::get();
+        $pemiliks = Pemilik::get();
 
         return view('tenant.create-tenant', [
             "title" => "Tambah Tenant",
             "active" => 'tenant',
             "tenants" => $tenants,
             "pasars" => $pasars,
+            "pemiliks" => $pemiliks,
         ]);
     }
 
@@ -52,7 +55,7 @@ class TenantController extends Controller
         Tenant::firstOrCreate([
             'nama_tenant' => $request['nama'],
             'pasar_id' => $request['pasar'],
-            'pemilik' =>  $request['pemilik'],
+            'pemilik_id' =>  $request['pemilik'],
             'biaya_iuran' =>(int) $request['biaya_iuran'],
             'created_by' => $request['created_by'],
             'longitude' => $request['longitude'],
