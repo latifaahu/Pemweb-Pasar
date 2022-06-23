@@ -27,6 +27,7 @@ Route::get('/pasar/create', [PasarController::class, 'create']);
 Route::get('/pasar/{pasar}/edit', [PasarController::class, 'edit']);
 Route::put('/pasar/{pasar}', [PasarController::class, 'update']);
 Route::get('/pasar/{pasar}/delete', [PasarController::class, 'destroy']);
+Route::get('/pasar/{pasar}/view', [PasarController::class, 'info']);
 
 Route::get('/tenant', [TenantController::class, 'index']);
 Route::post('/tenant', [TenantController::class, 'store']);
@@ -63,4 +64,4 @@ Route::get('/modals', function () {
    ]);
 });
 
-Route::get('/pasar/{pasar}/info', [PasarController::class, 'info']);
+
