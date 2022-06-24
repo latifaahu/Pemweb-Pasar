@@ -76,6 +76,7 @@
                             <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
                         </svg>
                         </a>
+                        @auth
                         <a href="/tenant/{{ $tenant->id }}/edit"
                         class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
                         aria-label="Edit"
@@ -113,7 +114,9 @@
                                     ></path>
                                 </svg>
                             </button>
+                        
                         </form>
+                        @endauth
                     </div>
                 </td>
             </tr>

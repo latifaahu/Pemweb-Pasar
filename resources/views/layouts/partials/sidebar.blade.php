@@ -225,6 +225,7 @@ class="z-0 flex-shrink-0 hidden w-64 overflow-y-auto bg-white dark:bg-gray-800 m
         </ul>
         </template>
     </li>
+    {{--
     @guest
     <li class="flex items-center justify-between w-full px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
         <span
@@ -250,7 +251,7 @@ class="z-0 flex-shrink-0 hidden w-64 overflow-y-auto bg-white dark:bg-gray-800 m
         <span class="ml-4">Login</span>
         </a>
     </li>
-    @endguest
+    @endguest --}}
     </ul>
     {{-- <div class="px-6 my-6">
     <button
