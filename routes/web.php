@@ -7,6 +7,7 @@ use App\Http\Controllers\RiwayatKepemilikan;
 use App\Http\Controllers\RiwayatKepemilikanController;
 use App\Http\Controllers\TenantController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RiwayatIuranController;
 
 /*
 |--------------------------------------------------------------------------
@@ -68,6 +69,9 @@ Route::get('/riwayat-kepemilikan', [RiwayatKepemilikanController::class, 'index'
 Route::post('/riwayat-kepemilikan', [RiwayatKepemilikanController::class, 'store']);
 Route::get('/riwayat-kepemilikan/create', [RiwayatKepemilikanController::class, 'create']);
 
+Route::get('/riwayat-iuran', [RiwayatIuranController::class, 'index']);
+Route::post('/riwayat-iuran', [RiwayatIurancontroller::class, 'store']);
+Route::get('/riwayat-iuran/create', [RiwayatIuranController::class, 'create']);
 
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
