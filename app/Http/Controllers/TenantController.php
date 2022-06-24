@@ -15,8 +15,11 @@ class TenantController extends Controller
 
         // untuk mwngambil keyword yang dimasukkan dalam search box
         if(request('search')) {
-            $tenants->where('nama_tenant', 'like', '%' . request('search') . '%')
-                ->orWhere('nama_pasar', 'like', '%' . request('search') . '%');
+            $tenants = Tenant::join('pemiliks', 'pemiliks.id', '=', 'tenants.pemilik_id')
+                        ->join('pasars', 'pasars.id', '=', 'tenants.pasar_id')
+                        ->where('pemiliks.nama', 'like', '%' . request('search') . '%')
+                        ->orWhere('pasars.nama_pasar', 'like', '%' . request('search') . '%')
+                        ->orWhere('tenants.nama_tenant', 'like', '%' . request('search') . '%');
         }
 
         return view('tenant', [
