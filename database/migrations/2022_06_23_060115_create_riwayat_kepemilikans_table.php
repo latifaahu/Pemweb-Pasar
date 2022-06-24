@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('riwayat_kepemilikans', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('tenant_id');
+            $table->foreignId('pemilik_id_lama');
+            $table->foreignId('pemilik_id_baru')->nullable();
+            $table->string('created_by');
             $table->timestamps();
         });
     }

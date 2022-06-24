@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pasar;
+use App\Models\Pemilik;
 use App\Models\RiwayatKepemilikan;
 use Illuminate\Http\Request;
 
@@ -27,12 +29,14 @@ class RiwayatKepemilikanController extends Controller
 
     public function create()
     {
-        $kepemilikans = RiwayatKepemilikan::get();
+        $pasars = Pasar::get();
+        $pemiliks = Pemilik::get();
 
         return view('transaksi.create-kepemilikan', [
             "title" => "Riwayat Kepemilikan",
             "active" => 'riwayat kepemilikan',
-            "kepemilikans" => $kepemilikans
+            "pasars" => $pasars,
+            "pemiliks" => $pemiliks
         ]);
     }
 

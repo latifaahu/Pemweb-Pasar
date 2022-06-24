@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\RiwayatKepemilikan;
 use App\Models\Tenant;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -40,6 +41,21 @@ class TenantSeeder extends Seeder
             "biaya_iuran" => 1000000,
             "longitude" => "-7.568726990848964",
             "latitude" => "110.83207330048376",
+            "created_by" => "Latifah"
+        ]);
+        RiwayatKepemilikan::firstOrCreate([
+            "tenant_id" => 1,
+            "pemilik_id_lama" => 1,
+            "created_by" => "Latifah"
+        ]);
+        RiwayatKepemilikan::firstOrCreate([
+            "tenant_id" => 2,
+            "pemilik_id_lama" => 1,
+            "created_by" => "Latifah"
+        ]);
+        RiwayatKepemilikan::firstOrCreate([
+            "tenant_id" => 3,
+            "pemilik_id_lama" => 2,
             "created_by" => "Latifah"
         ]);
     }

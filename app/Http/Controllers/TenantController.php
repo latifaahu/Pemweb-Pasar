@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Pasar;
 use App\Models\Tenant;
 use App\Models\Pemilik;
+use App\Models\RiwayatKepemilikan;
 use Illuminate\Http\Request;
 
 class TenantController extends Controller
@@ -55,7 +56,7 @@ class TenantController extends Controller
             'latitude' => 'required'
         ]);
 
-        Tenant::firstOrCreate([
+        $tenant = Tenant::firstOrCreate([
             'nama_tenant' => $request['nama'],
             'pasar_id' => $request['pasar'],
             'pemilik_id' =>  $request['pemilik'],
@@ -63,6 +64,12 @@ class TenantController extends Controller
             'created_by' => $request['created_by'],
             'longitude' => $request['longitude'],
             'latitude' => $request['latitude']
+        ]);
+
+        RiwayatKepemilikan::firstOrCreate([
+            'tenant_id' => $tenant->id,
+            'pemilik_id_lama' => $request['pemilik'],
+            'created_by' => $request['created_by'],
         ]);
 
         return redirect('/tenant')->with('status', 'Tenant berhasil ditambahkan!');

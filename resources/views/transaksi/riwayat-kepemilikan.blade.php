@@ -36,19 +36,35 @@
             <tbody
             class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
             >
-            {{-- @foreach ($pengelolas as $pengelola)
+            @foreach ($kepemilikans as $kepemilikan)
             <tr class="text-gray-700 dark:text-gray-400">
                 <td class="px-4 py-3">
                     {{ $loop->iteration }}
                 </td>
                 <td class="px-4 py-3 text-sm flex-initial w-16">
-                    {{ $pengelola->user->name }}
+                    {!! date('d/M/y', strtotime($kepemilikan->created_at)) !!}
                 </td>
                 <td class="px-4 py-3 text-sm flex-initial w-16">
-                    {{ $pengelola->pasar->nama_pasar }}
+                    {{-- @foreach ( $kepemilikan->tenant as $tenant)
+                        {{ $tenant->nama_tenant }}
+                    @endforeach --}}
+                    {{ $kepemilikan->tenant->nama_tenant }}
+                </td>
+                <td class="px-4 py-3 text-sm flex-initial w-16">
+                    {{ $kepemilikan->tenant->pasar->nama_pasar }}
+                </td>
+                <td class="px-4 py-3 text-sm flex-initial w-16">
+                    {{ $kepemilikan->pemilikLama->nama }}
+                </td>
+                <td class="px-4 py-3 text-sm flex-initial w-16">
+                    @if($kepemilikan->pemilik_id_baru)
+                        {{ $kepemilikan->pemilikBaru->nama }}
+                    @else
+                        -
+                    @endif
                 </td>
                 <td class="px-4 py-3 w-4 flex-initial">
-                    <div class="flex items-center space-x-4 text-sm">
+                    {{-- <div class="flex items-center space-x-4 text-sm">
                         <a href="/pengelola/{{ $pengelola->id }}/view"
                         class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
                         aria-label="View"
@@ -96,10 +112,10 @@
                                 </svg>
                             </button>
                         </form>
-                    </div>
+                    </div> --}}
                 </td>
             </tr>
-            @endforeach --}}
+            @endforeach
             </tbody>
         </table>
         </div>

@@ -18,4 +18,8 @@ class Pasar extends Model
     public function pengelola() {
         return $this->hasOne(Pengelola::class, 'pasar_id', 'id');
     }
+
+    public function tenant() {
+        return $this->hasMany(Tenant::class, 'pasar_id', 'id');
+    }
 }
