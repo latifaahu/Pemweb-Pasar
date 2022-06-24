@@ -112,4 +112,13 @@ class PengelolaController extends Controller
             "pengelola" => $pengelola
         ]);
     }
+
+    public function cetakPengelolaAll() {
+        $pengelolas = Pengelola::get();
+
+        return view('cetak.pengelola', [
+            "title" => "Cetak Data Pengelola",
+            "pengelolas" => $pengelolas
+        ]);
+    }
 }

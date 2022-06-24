@@ -1,5 +1,5 @@
 <a
-class="flex items-center justify-between p-2 text-sm font-semibold text-purple-100 bg-purple-600 rounded-md shadow-md focus:outline-none focus:shadow-outline-purple active:bg-purple-600 hover:bg-purple-700"
+class="flex items-center justify-between p-2 text-sm font-semibold dark:text-white dark:bg-teal-500 text-white bg-teal-500 rounded-md shadow-md focus:outline-none focus:shadow-outline-teal active:bg-teal-300 hover:bg-teal-400"
 href="/{{ $url }}/cetak-{{ $url }}"
 >
 <div class="flex items-center">

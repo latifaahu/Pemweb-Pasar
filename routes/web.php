@@ -70,3 +70,4 @@ Route::get('/riwayat-kepemilikan', [RiwayatKepemilikanController::class, 'index'
 Auth::routes();
 
 Route::get('/pasar/cetak-pasar', [PasarController::class, 'cetakPasarAll']);
+Route::get('/pengelola/cetak-pengelola', [PengelolaController::class, 'cetakPengelolaAll']);
