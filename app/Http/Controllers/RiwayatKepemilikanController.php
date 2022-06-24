@@ -24,4 +24,31 @@ class RiwayatKepemilikanController extends Controller
             "kepemilikans" => $kepemilikans->get()
         ]);
     }
+
+    public function create()
+    {
+        $kepemilikans = RiwayatKepemilikan::get();
+
+        return view('transaksi.create-kepemilikan', [
+            "title" => "Riwayat Kepemilikan",
+            "active" => 'riwayat kepemilikan',
+            "kepemilikans" => $kepemilikans
+        ]);
+    }
+
+    // public function store(Request $request) {
+
+    //     $request->validate([
+    //         'nama' => 'required|max:255|min:2',
+    //         'alamat' => 'required'
+    //     ]);
+
+    //     Pasar::firstOrCreate([
+    //         'nama_pasar' => $request['nama'],
+    //         'alamat' => $request['alamat'],
+    //         'created_by' => $request['created_by']
+    //     ]);
+
+    //     return redirect('/pasar')->with('status', 'Pasar berhasil ditambahkan!');
+    // }
 }

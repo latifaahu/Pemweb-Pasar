@@ -65,6 +65,8 @@ Route::get('/modals', function () {
 });
 
 Route::get('/riwayat-kepemilikan', [RiwayatKepemilikanController::class, 'index']);
+Route::post('/riwayat-kepemilikan', [RiwayatKepemilikanController::class, 'store']);
+Route::get('/riwayat-kepemilikan/create', [RiwayatKepemilikanController::class, 'create']);
 
 
 Auth::routes();
