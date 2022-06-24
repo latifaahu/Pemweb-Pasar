@@ -93,4 +93,13 @@ class PasarController extends Controller
         ]);
     }
 
+    public function cetakPasarAll() {
+        $pasars = Pasar::get();
+
+        return view('cetak.pasar', [
+            "title" => "Cetak Data Pasar",
+            "pasars" => $pasars
+        ]);
+    }
+
 }

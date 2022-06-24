@@ -49,10 +49,6 @@ Route::put('/pemilik/{pemilik}', [PemilikController::class, 'update']);
 Route::get('/pemilik/{pemilik}/view', [PemilikController::class, 'view']);
 Route::get('/pemilik/{pemilik}/delete', [PemilikController::class, 'destroy']);
 
-
-
-
-
 // bagian pengelola
 Route::get('/pengelola', [PengelolaController::class, 'index']);
 Route::post('/pengelola', [PengelolaController::class, 'store']);
@@ -73,4 +69,4 @@ Route::get('/riwayat-kepemilikan', [RiwayatKepemilikanController::class, 'index'
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/pasar/cetak-pasar', [PasarController::class, 'cetakPasarAll']);
