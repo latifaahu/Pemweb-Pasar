@@ -71,6 +71,8 @@
                     </tbody>
                 </table>
             </div>
+
+            @include('components.back-btn', ['url' => 'pasar'])
         </div>
     </div>
 </main>

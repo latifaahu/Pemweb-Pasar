@@ -16,8 +16,10 @@ class PengelolaController extends Controller
 
         // untuk mwngambil keyword yang dimasukkan dalam search box
         if(request('search')) {
-            $pengelolas->where('nama', 'like', '%' . request('search') . '%')
-                ->orWhere('alamat', 'like', '%' . request('search') . '%');
+            $pengelolas = Pengelola::join('users', 'users.id', '=', 'pengelolas.user_id')
+                        ->join('pasars', 'pasars.id', '=', 'pengelolas.pasar_id')
+                        ->where('users.name', 'like', '%' . request('search') . '%')
+                        ->orWhere('pasars.nama_pasar', 'like', '%' . request('search') . '%');
         }
 
         return view('pengelola', [

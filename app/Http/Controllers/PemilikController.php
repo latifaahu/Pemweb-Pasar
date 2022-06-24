@@ -10,7 +10,7 @@ class PemilikController extends Controller
 {
     public function index() {
 
-        $pemiliks = Pemilik::get();
+        $pemiliks = Pemilik::latest();
 
         // untuk mwngambil keyword yang dimasukkan dalam search box
         if(request('search')) {
@@ -21,7 +21,7 @@ class PemilikController extends Controller
         return view('pemilik', [
             "title" => "Data Pemilik",
             "active" => 'pemilik',
-            "pemiliks" => $pemiliks
+            "pemiliks" => $pemiliks->get()
         ]);
     }
     public function create() {
@@ -32,7 +32,7 @@ class PemilikController extends Controller
             "active" => 'pemilik',
             "pemiliks" => $pemiliks
         ]);
-        
+
     }
 
     public function store(Request $request) {
@@ -82,7 +82,7 @@ class PemilikController extends Controller
             'nik' => $request['nik'],
             'no_wa' => $request['no_wa'],
             'no_telp' => $request['no_telp'],
-            'created_by' => $request['created_by']  
+            'created_by' => $request['created_by']
         ]);
 
         return redirect('/pemilik')->with('status', 'Pemilik berhasil diupdate!');
@@ -103,5 +103,5 @@ class PemilikController extends Controller
         return redirect('/pemilik')->with('status', 'Pemilik berhasil dihapus!');
 
     }
-    
+
 }

@@ -1,3 +1,4 @@
+@auth
 @extends('layouts.mainlayout')
 
 @section('content')
@@ -61,3 +62,4 @@
     </div>
 </main>
 @endsection
+@endauth

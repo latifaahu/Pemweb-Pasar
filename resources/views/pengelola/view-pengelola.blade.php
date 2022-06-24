@@ -71,6 +71,7 @@
                     </tbody>
                 </table>
             </div>
+            @include('components.back-btn', ['url' => 'pengelola'])
         </div>
     </div>
 </main>
