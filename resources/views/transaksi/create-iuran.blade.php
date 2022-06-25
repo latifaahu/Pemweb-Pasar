@@ -24,6 +24,20 @@
                         </select>
                     </label>
                 </div>
+                <div class="mb-4">
+                    <label class="block mt-4 text-sm" for="tenant">
+                        <span class="text-gray-700 dark:text-gray-400">
+                        Nama Pemilik
+                        </span>
+                        <select name="tenant" id="tenant"
+                        class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
+                        required >
+                            @foreach ($tenants as $tenant)
+                                <option value="{{$tenant->pemilik->id}}" class="w-full rounded-lg bg-grey-200" >{{$tenant->pemilik->nama}}</option>
+                            @endforeach
+                        </select>
+                    </label>
+                </div>
 
                 {{-- <div class="mb-4">
                     <label class="block text-sm" for="tenant">
@@ -52,10 +66,10 @@
 
                 <div class="mb-4">
                     <label class="block text-sm" for="tahun_bulan">
-                        <span class="text-gray-700 dark:text-gray-400 mb-3">Waktu</span>
+                        <span class="text-gray-700 dark:text-gray-400 mb-3">Periode Pembayaran</span>
                         <input
                             class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:ring border-purple-400 focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input rounded-md h-8 px-3 py-4 border border-solid"
-                            placeholder="waktu" id="tahun_bulan" name="tahun_bulan" required
+                            type="date" placeholder="waktu" id="tahun_bulan" name="tahun_bulan" required
                         />
                     </label>
                 </div>
@@ -74,7 +88,7 @@
                         <span class="text-gray-700 dark:text-gray-400 mb-3">Tanggal Bayar</span>
                         <input
                             class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:ring border-purple-400 focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input rounded-md h-8 px-3 py-4 border border-solid"
-                            placeholder="Tanggal bayar" id="tgl_bayar" name="tgl_bayar" required
+                            type="date" placeholder="Tanggal bayar" id="tgl_bayar" name="tgl_bayar" required
                         />
                     </label>
                 </div>

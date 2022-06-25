@@ -28,7 +28,7 @@
             >
                 <th class="px-4 py-3">No</th>
                 <th class="px-4 py-3">Nama Tenant</th>
-                <th class="px-4 py-3">Waktu</th>
+                <th class="px-4 py-3">Periode</th>
                 <th class="px-4 py-3">Jumlah Bayar</th>
                 <th class="px-4 py-3">Tanggal Bayar</th>
                 <th class="px-4 py-3">Created at</th>

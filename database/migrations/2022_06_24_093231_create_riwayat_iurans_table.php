@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('riwayat_iurans', function (Blueprint $table) {
             $table->id();
             $table->foreignId('tenant_id');
+            $table->foreignId('pemilik_id');
             $table->date('tahun_bulan');
             $table->unsignedBigInteger('jml_bayar');
             $table->date('tgl_bayar')->nullable();
