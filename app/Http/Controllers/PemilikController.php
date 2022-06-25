@@ -68,7 +68,7 @@ class PemilikController extends Controller
 
     public function update(Pemilik $pemilik)
     {
-        $request()->validate([
+        request()->validate([
             'nama' => 'required|max:255|min:2',
             'alamat' => 'required',
             'nik' => 'required|max:255|min:5',
@@ -77,12 +77,12 @@ class PemilikController extends Controller
         ]);
 
         $pemilik->update([
-            'nama' => $request['nama'],
-            'alamat' => $request['alamat'],
-            'nik' => $request['nik'],
-            'no_wa' => $request['no_wa'],
-            'no_telp' => $request['no_telp'],
-            'created_by' => $request['created_by']
+            'nama' => request('nama'),
+            'alamat' => request('alamat'),
+            'nik' => request('nik'),
+            'no_wa' => request('no_wa'),
+            'no_telp' => request('no_telp'),
+            'created_by' => request('created_by')
         ]);
 
         return redirect('/pemilik')->with('status', 'Pemilik berhasil diupdate!');
@@ -102,6 +102,15 @@ class PemilikController extends Controller
 
         return redirect('/pemilik')->with('status', 'Pemilik berhasil dihapus!');
 
+    }
+
+    public function cetakPemilikAll() {
+        $pemiliks = Pemilik::get();
+
+        return view('cetak.pemilik', [
+            "title" => "Cetak Data Pemilik",
+            "pemiliks" => $pemiliks
+        ]);
     }
 
 }

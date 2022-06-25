@@ -13,7 +13,10 @@
         </h2>
 
         <div class="flex px-0 my-6 space-x-3">
+            @auth
             @include('components.add-btn', ['url' => 'pemilik', 'btn' => 'Pemilik'])
+            @endauth
+            @include('components.cetak-btn', ['url' => 'pemilik', 'btn' => 'Pemilik'])
             @include('components.search-input', ['url' => 'pemilik'])
         </div>
     </div>
@@ -31,7 +34,6 @@
                 <th class="px-4 py-3">NIK</th>
                 <th class="px-4 py-3">No WA</th>
                 <th class="px-4 py-3">No Telephone</th>
-                <th class="px-4 py-3">Created By</th>
                 <th class="px-4 py-3">Actions</th>
             </tr>
             </thead>
@@ -58,11 +60,8 @@
                 <td class="px-4 py-3 text-sm flex-initial">
                     {{ $pemilik->no_telp }}
                 </td>
-                <td class="px-4 py-3 text-sm flex-initial">
-                    {{ $pemilik->created_by}}
-                </td>
                 <td class="px-4 py-3 w-4 flex-initial">
-                    
+
                     <div class="flex items-center space-x-4 text-sm">
                         <a href="/pemilik/{{ $pemilik->id}}/view"
                         class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
