@@ -76,6 +76,7 @@ Route::get('/riwayat-iuran/create', [RiwayatIuranController::class, 'create']);
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/pasar/cetak-pasar', [PasarController::class, 'cetakPasarAll']);
+Route::get('/pasar/{pasar}/cetak-pasar', [PasarController::class, 'cetakPasarSingle']);
 Route::get('/pengelola/cetak-pengelola', [PengelolaController::class, 'cetakPengelolaAll']);
 Route::get('/tenant/cetak-tenant', [TenantController::class, 'cetakTenantAll']);
 Route::get('/pemilik/cetak-pemilik', [PemilikController::class, 'cetakPemilikAll']);

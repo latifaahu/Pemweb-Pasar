@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pasar;
 use Illuminate\Http\Request;
+use PDF;
 
 class PasarController extends Controller
 {
@@ -100,6 +101,12 @@ class PasarController extends Controller
             "title" => "Cetak Data Pasar",
             "pasars" => $pasars
         ]);
+    }
+
+    public function cetakPasarSingle(Pasar $pasar) {
+
+        $pdf = PDF::loadView('cetak.pasar-single', compact(['pasar']));
+        return $pdf->download('invoice.pdf');
     }
 
 }

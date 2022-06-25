@@ -15,7 +15,7 @@
             @auth
                 @include('components.add-btn', ['url' => 'riwayat-kepemilikan', 'btn' => 'Transaksi Tenant'])
             @endauth
-            @include('components.cetak-btn', ['url' => 'riwayat-kepemilikan', 'btn' => 'Riwayat'])
+            @include('components.cetak-btn', ['url' => 'riwayat-kepemilikan', 'slug' => 'riwayat-kepemilikan', 'btn' => 'Riwayat'])
             @include('components.search-input', ['url' => 'riwayat-kepemilikan', 'text' => 'riwayat'])
         </div>
     </div>

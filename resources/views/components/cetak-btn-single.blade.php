@@ -1,6 +1,6 @@
 <a
 class="flex items-center justify-between p-2 text-sm font-semibold dark:text-white dark:bg-teal-500 text-white bg-teal-500 rounded-md shadow-md focus:outline-none focus:shadow-outline-teal active:bg-teal-300 hover:bg-teal-400"
-href="/{{ $url }}/cetak-{{ $slug }}"
+href="/{{ $url }}/{{ $id }}/cetak-{{ $url }}"
 >
 <div class="flex items-center">
     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">

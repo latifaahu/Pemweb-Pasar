@@ -33,7 +33,7 @@
                 </div>
                 <div class="hidden">
                     <label class="block mt-4 text-sm" for="edited_by">
-                        <input id="edited_by" name="edited_by" value="latifah edit"/>
+                        <input id="edited_by" name="edited_by" value="{{ Auth::user()->name }}"/>
                     </label>
                 </div>
 

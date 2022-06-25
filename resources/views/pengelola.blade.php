@@ -15,7 +15,7 @@
             @auth
             @include('components.add-btn', ['url' => 'pengelola', 'btn' => 'Pengelola'])
             @endauth
-            @include('components.cetak-btn', ['url' => 'pengelola', 'btn' => 'Pengelola'])
+            @include('components.cetak-btn', ['url' => 'pengelola', 'slug' => 'pengelola', 'btn' => 'Pengelola'])
             @include('components.search-input', ['url' => 'pengelola', 'text' => 'pengelola'])
         </div>
     </div>
