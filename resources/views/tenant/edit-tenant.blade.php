@@ -16,7 +16,7 @@
                         <span class="text-gray-700 dark:text-gray-400 mb-3">Nama Tenant</span>
                         <input
                             class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:ring border-purple-400 focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input rounded-md h-8 px-3 py-4 border border-solid"
-                            placeholder="Nama Tenant" id="nama" name="nama" value="{{$tenants->nama_tenant}}" required 
+                            placeholder="Nama Tenant" id="nama" name="nama" value="{{$tenants->nama_tenant}}" required
                         />
                     </label>
                 </div>
@@ -47,7 +47,7 @@
                         required >
                         <option value="{{$tenants->pemilik->id}}" class="w-full rounded-lg bg-grey-200" selected>{{ $tenants->pemilik->nama }}</option>
                             @foreach ($pemiliks as $pemilik)
-                                <option value="{{$pemilik->id}}" class="w-full rounded-lg bg-grey-200" >{{$pemilik->nama}}</option>                           
+                                <option value="{{$pemilik->id}}" class="w-full rounded-lg bg-grey-200" >{{$pemilik->nama}}</option>
                             @endforeach
                         </select>
                     </label>
@@ -84,8 +84,8 @@
                 </div>
 
                 <div class="hidden">
-                    <label class="block mt-4 text-sm" for="created_by">
-                        <input id="created_by" name="created_by" value="latifah"/>
+                    <label class="block mt-4 text-sm" for="edited_by">
+                        <input id="edited_by" name="edited_by" value="{{ Auth::user()->name }}"/>
                     </label>
                 </div>
 

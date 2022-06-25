@@ -104,7 +104,7 @@ class TenantController extends Controller
             'pasar_id' => request('pasar'),
             'pemilik_id' =>  request('pemilik'),
             'biaya_iuran' =>(int) request('biaya_iuran'),
-            'created_by' => request('created_by'),
+            'edited_by' => request('edited_by'),
             'longitude' => request('longitude'),
             'latitude' => request('latitude')
         ]);

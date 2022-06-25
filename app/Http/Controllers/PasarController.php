@@ -106,7 +106,7 @@ class PasarController extends Controller
     public function cetakPasarSingle(Pasar $pasar) {
 
         $pdf = PDF::loadView('cetak.pasar-single', compact(['pasar']));
-        return $pdf->download('invoice.pdf');
+        return $pdf->download('pasar-info.pdf');
     }
 
 }

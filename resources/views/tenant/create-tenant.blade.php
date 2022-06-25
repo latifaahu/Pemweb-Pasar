@@ -91,7 +91,7 @@
 
                 <div class="hidden">
                     <label class="block mt-4 text-sm" for="created_by">
-                        <input id="created_by" name="created_by" value="latifah"/>
+                        <input id="created_by" name="created_by" value="{{ Auth::user()->name }}"/>
                     </label>
                 </div>
 
