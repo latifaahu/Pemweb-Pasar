@@ -16,7 +16,7 @@
             @include('components.add-btn', ['url' => 'pasar', 'btn' => 'Pasar'])
             @endauth
             @include('components.cetak-btn', ['url' => 'pasar', 'btn' => 'Pasar'])
-            @include('components.search-input', ['url' => 'pasar'])
+            @include('components.search-input', ['url' => 'pasar', 'text' => 'pasar'])
         </div>
     </div>
 

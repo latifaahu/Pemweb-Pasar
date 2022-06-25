@@ -79,3 +79,4 @@ Route::get('/pasar/cetak-pasar', [PasarController::class, 'cetakPasarAll']);
 Route::get('/pengelola/cetak-pengelola', [PengelolaController::class, 'cetakPengelolaAll']);
 Route::get('/tenant/cetak-tenant', [TenantController::class, 'cetakTenantAll']);
 Route::get('/pemilik/cetak-pemilik', [PemilikController::class, 'cetakPemilikAll']);
+Route::get('/riwayat-kepemilikan/cetak-riwayat-kepemilikan', [RiwayatKepemilikanController::class, 'cetakRiwayatAll']);

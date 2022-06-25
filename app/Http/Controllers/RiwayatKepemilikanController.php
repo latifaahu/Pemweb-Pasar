@@ -55,4 +55,13 @@ class RiwayatKepemilikanController extends Controller
 
     //     return redirect('/pasar')->with('status', 'Pasar berhasil ditambahkan!');
     // }
+
+    public function cetakRiwayatAll() {
+        $kepemilikans = RiwayatKepemilikan::get();
+
+        return view('cetak.riwayat-kepemilikan', [
+            "title" => "Cetak Data Riwayat Kepemilikan",
+            "kepemilikans" => $kepemilikans
+        ]);
+    }
 }

@@ -12,8 +12,10 @@
         </h2>
 
         <div class="flex px-0 my-6 space-x-3">
-            @include('components.add-btn', ['url' => 'riwayat-iuran', 'btn' => 'Riwayat Iuran'])
-            @include('components.search-input', ['url' => 'riwayat-iuran'])
+            @auth
+                @include('components.add-btn', ['url' => 'riwayat-iuran', 'btn' => 'Riwayat Iuran'])
+            @endauth
+            @include('components.search-input', ['url' => 'riwayat-iuran', 'text' => 'riwayat'])
         </div>
     </div>
 
@@ -60,7 +62,7 @@
                 </td>
                 <td class="px-4 py-3 text-sm flex-initial w-16">
                     {{$iuran->created_by}}
-                </td> 
+                </td>
             {{-- @foreach ($pengelolas as $pengelola)
             <tr class="text-gray-700 dark:text-gray-400">
                 <td class="px-4 py-3">
