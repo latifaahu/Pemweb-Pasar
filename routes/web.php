@@ -77,3 +77,4 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/pasar/cetak-pasar', [PasarController::class, 'cetakPasarAll']);
 Route::get('/pengelola/cetak-pengelola', [PengelolaController::class, 'cetakPengelolaAll']);
+Route::get('/tenant/cetak-tenant', [TenantController::class, 'cetakTenantAll']);

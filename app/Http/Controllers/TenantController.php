@@ -134,4 +134,13 @@ class TenantController extends Controller
         ]);
     }
 
+    public function cetakTenantAll() {
+        $tenants = Tenant::get();
+
+        return view('cetak.tenant', [
+            "title" => "Cetak Data Tenant",
+            "tenants" => $tenants
+        ]);
+    }
+
 }
