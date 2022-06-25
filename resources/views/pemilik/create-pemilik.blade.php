@@ -31,7 +31,7 @@
                         ></textarea>
                     </label>
                 </div>
-                
+
                 <div class="mb-4">
                     <label class="block mt-4 text-sm" for="nik">
                         <span class="text-gray-700 dark:text-gray-400">NIK</span>
@@ -47,7 +47,7 @@
                         <span class="text-gray-700 dark:text-gray-400 mb-3">No WhatsApp</span>
                         <input
                             class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:ring border-purple-400 focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input rounded-md h-8 px-3 py-4 border border-solid"
-                            
+
                             placeholder="No WhatsApp" id="no_wa" name="no_wa" required
                         ></input>
                     </label>
@@ -63,11 +63,11 @@
                 </div>
                 <div class="hidden">
                     <label class="block mt-4 text-sm" for="created_by">
-                        <input id="created_by" name="created_by" value="Latifah"/>
+                        <input id="created_by" name="created_by" value="{{ Auth::user()->name }}"/>
                     </label>
                 </div>
-                
-                
+
+
                 <a href="/pemilik"
                     class="px-4 py-2 mr-3 text-sm font-medium leading-5 text-white  transition-colors duration-150 border border-gray-300 rounded-lg dark:text-gray-400 sm:px-4 sm:py-2 sm:w-auto active:bg-transparent hover:border-gray-500 focus:border-gray-500 active:text-gray-500 focus:outline-none focus:shadow-outline-gray"
                     >

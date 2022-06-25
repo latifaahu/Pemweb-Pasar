@@ -87,6 +87,14 @@ class PengelolaController extends Controller
             'pasar' => 'required'
         ]);
 
+        // if(Pengelola::where('user_id', '=', request('user')) -> count() > 2) {
+        //     return redirect('/pengelola')->with('status', 'Gagal ditambahkan! Pengelola sudah ditugaskan di pasar lain');
+        // }
+
+        // if(Pengelola::where('pasar_id', '=', request('pasar')) -> count() > 1) {
+        //     return redirect('/pengelola')->with('status', 'Gagal ditambahkan! Pasar sudah memiliki pengelola');
+        // }
+
         $pengelola->update([
             'user_id' => request('user'),
             'pasar_id' => request('pasar'),

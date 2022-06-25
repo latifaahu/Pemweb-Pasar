@@ -43,18 +43,31 @@
                             </tr>
 
                             <tr class="text-gray-700 dark:text-gray-400">
-                            <td class="px-4 py-1 font-semibold">Dibuat Oleh</td>
+                            <td class="px-4 py-1 font-semibold">Dibuat oleh</td>
                             <td class="px-1 py-1">:</td>
                             <td class="px-1 py-1">{{ $pemilik->created_by }}</td>
                             </tr>
 
                             <tr class="text-gray-700 dark:text-gray-400">
-                            <td class="px-4 py-1 font-semibold">Dibuat Pada</td>
+                            <td class="px-4 py-1 font-semibold">Dibuat pada</td>
                             <td class="px-1 py-1">:</td>
                             <td class="px-1 py-1">{{ $pemilik->created_at }}</td>
                             </tr>
+
                             <tr class="text-gray-700 dark:text-gray-400">
-                            <td class="px-4 py-1 font-semibold">Terakhir diedit Pada</td>
+                            <td class="px-4 py-1 font-semibold">Terakhir diedit oleh</td>
+                            <td class="px-1 py-1">:</td>
+                            <td class="px-1 py-1">
+                                @if(empty($pemilik->edited_by))
+                                    {{ $pemilik->created_by }}
+                                @else
+                                    {{ $pemilik->edited_by }}
+                                @endif
+                            </td>
+                            </tr>
+
+                            <tr class="text-gray-700 dark:text-gray-400">
+                            <td class="px-4 py-1 font-semibold">Terakhir diedit pada</td>
                             <td class="px-1 py-1">:</td>
                             <td class="px-1 py-1">{{ $pemilik->created_at }}</td>
                             </tr>

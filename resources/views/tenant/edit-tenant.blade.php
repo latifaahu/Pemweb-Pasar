@@ -44,11 +44,11 @@
                         </span>
                         <select name="pemilik" id="pemilik"
                         class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
-                        required >
+                        disabled >
                         <option value="{{$tenants->pemilik->id}}" class="w-full rounded-lg bg-grey-200" selected>{{ $tenants->pemilik->nama }}</option>
-                            @foreach ($pemiliks as $pemilik)
+                            {{-- @foreach ($pemiliks as $pemilik)
                                 <option value="{{$pemilik->id}}" class="w-full rounded-lg bg-grey-200" >{{$pemilik->nama}}</option>
-                            @endforeach
+                            @endforeach --}}
                         </select>
                     </label>
                 </div>

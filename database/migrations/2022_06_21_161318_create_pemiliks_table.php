@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('no_wa');
             $table->string('no_telp');
             $table->string('created_by');
+            $table->string('edited_by')->nullable();
             $table->timestamps();
         });
     }

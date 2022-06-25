@@ -82,7 +82,7 @@ class PemilikController extends Controller
             'nik' => request('nik'),
             'no_wa' => request('no_wa'),
             'no_telp' => request('no_telp'),
-            'created_by' => request('created_by')
+            'edited_by' => request('edited_by')
         ]);
 
         return redirect('/pemilik')->with('status', 'Pemilik berhasil diupdate!');
