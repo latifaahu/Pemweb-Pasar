@@ -4,7 +4,10 @@
 
 <main class="h-full pb-16 overflow-y-auto">
     <div class="container grid px-6 mx-auto">
-        <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">Informasi {{ $pasar->nama_pasar }}</h2>
+        <div class="flex my-6">
+            @include('components.back-btn', ['url' => 'pasar'])
+            <h2 class="text-2xl font-semibold text-gray-700 dark:text-gray-200">Informasi {{ $pasar->nama_pasar }}</h2>
+        </div>
 
         <div class="px-4 py-3 mb-8 text-sm text-left dark:text-gray-400 bg-white rounded-lg shadow-md dark:bg-gray-800">
 
@@ -71,8 +74,6 @@
                     </tbody>
                 </table>
             </div>
-
-            @include('components.back-btn', ['url' => 'pasar'])
         </div>
     </div>
 </main>

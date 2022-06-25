@@ -4,7 +4,10 @@
 
 <main class="h-full pb-16 overflow-y-auto">
     <div class="container grid px-6 mx-auto">
-        <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">Informasi {{ $tenants->nama_tenant }}</h2>
+        <div class="flex my-6">
+            @include('components.back-btn', ['url' => 'tenant'])
+            <h2 class="text-2xl font-semibold text-gray-700 dark:text-gray-200">Informasi {{ $tenants->nama_tenant }}</h2>
+        </div>
 
         <div class="px-4 py-3 mb-8 text-sm text-left dark:text-gray-400 bg-white rounded-lg shadow-md dark:bg-gray-800">
 
@@ -38,10 +41,10 @@
                     <tr class="h-4"><td></td></tr>
                     <tr>
                         <th class="font-semibold">Riwayat</th>
-                        <td><a href="/riwayat-kepemilikan">Riwayat Kepemilikan</a><br>
+                        <td>: <a href="/riwayat-kepemilikan">Riwayat Kepemilikan</a><br>
                     </tr>
                         <th class="font-semibold"></th>
-                        <td><a href="/riwayat-iuran">Riwayat Iuran</a><br>
+                        <td>: <a href="/riwayat-iuran">Riwayat Iuran</a><br>
                     <tr class="h-4"><td></td></tr>
                     <tr>
                         <th class="font-semibold">Dibuat oleh</th>
