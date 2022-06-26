@@ -26,7 +26,7 @@ class TenantController extends Controller
         return view('tenant', [
             "title" => "Data Tenant",
             "active" => 'tenant',
-            "tenants" => $tenants->get()
+            "tenants" => $tenants->paginate(5)
         ]);
     }
 
