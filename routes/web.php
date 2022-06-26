@@ -8,6 +8,7 @@ use App\Http\Controllers\RiwayatKepemilikanController;
 use App\Http\Controllers\TenantController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RiwayatIuranController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -81,3 +82,10 @@ Route::get('/pengelola/cetak-pengelola', [PengelolaController::class, 'cetakPeng
 Route::get('/tenant/cetak-tenant', [TenantController::class, 'cetakTenantAll']);
 Route::get('/pemilik/cetak-pemilik', [PemilikController::class, 'cetakPemilikAll']);
 Route::get('/riwayat-kepemilikan/cetak-riwayat-kepemilikan', [RiwayatKepemilikanController::class, 'cetakRiwayatAll']);
+
+Route::group(array('prefix'=>'user'), function(){
+    Route::get('profile/{id}', [ProfileController::class, 'view']);
+    Route::get('profile/{id}/edit', [ProfileController::class, 'edit']);
+    Route::put('profile/{id}/update', [ProfileController::class, 'update']);
+    Route::post('profile', [ProfileController::class, 'store']);
+});
