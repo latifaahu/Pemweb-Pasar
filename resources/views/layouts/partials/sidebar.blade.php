@@ -159,6 +159,7 @@ class="z-0 flex-shrink-0 hidden w-64 overflow-y-auto bg-white dark:bg-gray-800 m
         <span class="ml-4">Pengelola</span>
         </a>
     </li>
+    @auth
     <li class="relative px-6 py-3">
         <span
         class="absolute inset-y-0 left-0 w-1 {{ ($active === "riwayat kepemilikan" || $active === "riwayat iuran") ? "bg-purple-600" : "" }} rounded-tr-lg rounded-br-lg"
@@ -225,6 +226,7 @@ class="z-0 flex-shrink-0 hidden w-64 overflow-y-auto bg-white dark:bg-gray-800 m
         </ul>
         </template>
     </li>
+    @endauth
     {{--
     @guest
     <li class="flex items-center justify-between w-full px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">

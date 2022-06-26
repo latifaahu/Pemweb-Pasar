@@ -21,7 +21,7 @@ use App\Http\Controllers\RiwayatIuranController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/pasar');
 });
 
 Route::get('/pasar', [PasarController::class, 'index']);

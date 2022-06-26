@@ -217,6 +217,7 @@ module.exports = {
     boxShadow: ['focus', 'dark:focus'],
   },
   plugins: [
+    require('tailwindcss-plugins/pagination'),
     require('tailwindcss-multi-theme'),
     require('@tailwindcss/custom-forms'),
     plugin(({ addUtilities, e, theme, variants }) => {

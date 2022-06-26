@@ -21,7 +21,7 @@ class PasarController extends Controller
         return view('pasar', [
             "title" => "Data Pasar",
             "active" => 'pasar',
-            "pasars" => $pasars->get()
+            "pasars" => $pasars->paginate(5)
         ]);
     }
 
