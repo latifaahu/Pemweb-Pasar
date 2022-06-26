@@ -34,9 +34,7 @@ class="z-0 flex-shrink-0 hidden w-64 overflow-y-auto bg-white dark:bg-gray-800 m
     </li>
     </ul> --}}
     <ul class="mt-8">
-    @guest
-
-    @else
+   
     <li class="relative px-6 py-3">
         <span
         class="absolute inset-y-0 left-0 w-1 {{ ($active === "home") ? "bg-purple-600" : "" }} rounded-tr-lg rounded-br-lg"
@@ -52,7 +50,7 @@ class="z-0 flex-shrink-0 hidden w-64 overflow-y-auto bg-white dark:bg-gray-800 m
         <span class="ml-4">Home</span>
         </a>
     </li>
-    @endguest
+    
     <li class="relative px-6 py-3">
         <span
         class="absolute inset-y-0 left-0 w-1 {{ ($active === "pasar") ? "bg-purple-600" : "" }} rounded-tr-lg rounded-br-lg"
