@@ -80,6 +80,7 @@ Route::get('/pasar/cetak-pasar', [PasarController::class, 'cetakPasarAll']);
 Route::get('/pasar/{pasar}/cetak-pasar', [PasarController::class, 'cetakPasarSingle']);
 Route::get('/pengelola/cetak-pengelola', [PengelolaController::class, 'cetakPengelolaAll']);
 Route::get('/tenant/cetak-tenant', [TenantController::class, 'cetakTenantAll']);
+Route::get('/tenant/{tenant}/cetak-tenant', [TenantController::class, 'cetakTenantSingle']);
 Route::get('/pemilik/cetak-pemilik', [PemilikController::class, 'cetakPemilikAll']);
 Route::get('/riwayat-kepemilikan/cetak-riwayat-kepemilikan', [RiwayatKepemilikanController::class, 'cetakRiwayatAll']);
 

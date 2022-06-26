@@ -71,7 +71,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th class="font-semibold">Terakhir diedit oleh</th>
+                        <th class="font-semibold">Terakhir diupdate oleh</th>
                         <td>
                             @if(empty($pasar->edited_by))
                                 : {{ $pasar->created_by }}
@@ -81,7 +81,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th class="font-semibold">Terakhir diedit pada</th>
+                        <th class="font-semibold">Terakhir diupdate pada</th>
                         <td>
                             : {{ $pasar->updated_at }}
                         </td>
@@ -91,8 +91,9 @@
             </div>
         </div>
 
-        <div class="px-4 py-3 mb-8 text-sm text-left dark:text-gray-400 bg-white rounded-lg shadow-md dark:bg-gray-800">
+        <h2 class="text-lg mb-4 font-semibold text-gray-700 dark:text-gray-200">Daftar Tenant di {{ $pasar->nama_pasar }}</h2>
 
+        <div class="px-4 py-3 mb-8 text-sm text-left dark:text-gray-400 bg-white rounded-lg shadow-md dark:bg-gray-800">
             <div class="w-full overflow-x-auto">
                 <table class="w-full whitespace-no-wrap">
                     <thead>

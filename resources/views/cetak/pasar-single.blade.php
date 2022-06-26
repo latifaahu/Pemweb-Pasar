@@ -4,6 +4,9 @@
         <title>Document</title>
     </head>
     <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
         table {
         font-family: arial, sans-serif;
         border-collapse: collapse;
@@ -19,10 +22,14 @@
         .tenant tr:nth-child(even) {
         background-color: #dddddd;
         }
+        h1 {
+            font-weight: bold;
+            font-size: 16pt;
+        }
         </style>
     </style>
     <body>
-        <b>Informasi {{ $pasar->nama_pasar }}</b>
+        <h1>Informasi {{ $pasar->nama_pasar }}</h1>
         <table style="margin: 10px">
             <colgroup>
                 <col span="1" style="width: 20%;">
@@ -83,7 +90,9 @@
             </tr>
             </tbody>
         </table>
+
         <div>
+            <h1>Daftar Tenant di {{ $pasar->nama_pasar }}</h1>
             <table class="tenant">
                 <thead>
                 <tr >

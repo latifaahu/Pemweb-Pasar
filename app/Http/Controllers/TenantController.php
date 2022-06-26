@@ -7,6 +7,7 @@ use App\Models\Tenant;
 use App\Models\Pemilik;
 use App\Models\RiwayatKepemilikan;
 use Illuminate\Http\Request;
+use PDF;
 
 class TenantController extends Controller
 {
@@ -122,13 +123,12 @@ class TenantController extends Controller
 
     public function info(Tenant $tenant)
     {
-        $tenants = Tenant::get();
         $pasars = Pasar::get();
         $pemiliks = Pemilik::get();
         return view('tenant.info-tenant', [
             "title" => "Informasi Tenant",
             "active" => 'tenant',
-            "tenants" => $tenant,
+            "tenant" => $tenant,
             "pasars" => $pasars,
             "pemiliks" => $pemiliks
         ]);
@@ -141,6 +141,12 @@ class TenantController extends Controller
             "title" => "Cetak Data Tenant",
             "tenants" => $tenants
         ]);
+    }
+
+    public function cetakTenantSingle(Tenant $tenant) {
+
+        $pdf = PDF::loadView('cetak.tenant-single', compact(['tenant']));
+        return $pdf->download('tenant-info.pdf');
     }
 
 }
