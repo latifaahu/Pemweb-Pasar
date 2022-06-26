@@ -21,7 +21,7 @@ class PemilikController extends Controller
         return view('pemilik', [
             "title" => "Data Pemilik",
             "active" => 'pemilik',
-            "pemiliks" => $pemiliks->get()
+            "pemiliks" => $pemiliks->paginate(5)
         ]);
     }
     public function create() {
