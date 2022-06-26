@@ -18,27 +18,28 @@
                         <select name="pasar" id="pasar"
                         class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
                         required >
+                        <option disabled selected>Pilih pasar </option>
                             @foreach ($pasars as $pasar)
-                                <option value="{{$pasar->id}}" class="w-full rounded-lg bg-grey-200" >{{$pasar->nama_pasar}}</option>
+                                <option value="{{$pasar->id}}" class="w-full rounded-lg bg-grey-200 form-control dynamic" data-dependent="tenant">{{$pasar->nama_pasar}}</option>
                             @endforeach
                         </select>
                     </label>
                 </div>
 
-                {{-- <div class="mb-4">
+                <div class="mb-4">
                     <label class="block text-sm" for="tenant">
                         <span class="text-gray-700 dark:text-gray-400 mb-3">Nama Tenant</span>
                         <select name="tenant" id="tenant"
-                        class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
-                        required >
+                        class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray form-control dynamic"
+                        required data-dependent="pemiliklama">
                             @foreach ($pasars as $pasar)
                                 <option value="{{$pasar->tenant->id}}" class="w-full rounded-lg bg-grey-200" >{{$pasar->tenant->nama_tenant}}</option>
                             @endforeach
                         </select>
                     </label>
-                </div> --}}
+                </div>
 
-                {{-- <div class="mb-4">
+                <div class="mb-4">
                     <label class="block mt-4 text-sm" for="pemiliklama">
                         <span class="text-gray-700 dark:text-gray-400">
                         Nama Pemilik Lama
@@ -48,7 +49,7 @@
                             id="pemiliklama" name="pemiliklama" value="{{ $pasars->tenant->pemilik->nama }}" disable
                         />
                     </label>
-                </div> --}}
+                </div>
 
                 <div class="mb-4">
                     <label class="block mt-4 text-sm" for="pemilikbaru">
