@@ -79,7 +79,7 @@
                             <tr >
                             <td class="font-semibold">Terakhir diedit pada</td>
                             
-                            <td >: {{ $pemilik->created_at }}</td>
+                            <td >: {{ $pemilik->updated_at }}</td>
                             </tr>
 
                             <tr >

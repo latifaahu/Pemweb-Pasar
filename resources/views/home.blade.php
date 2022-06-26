@@ -53,7 +53,7 @@
                   <p
                     class="text-lg font-semibold text-gray-700 dark:text-gray-200"
                   >
-                    376
+                  {{$pasars}}
                   </p>
                 </div>
               </div>
@@ -76,7 +76,7 @@
                   <p
                     class="text-lg font-semibold text-gray-700 dark:text-gray-200"
                   >
-                    6389
+                  {{$pengelolas}}
                   </p>
                 </div>
               </div>
@@ -102,7 +102,7 @@
                   
                   <p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
                  
-                    111
+                    {{$pemiliks}}
                   
                   </p>
                   
@@ -129,7 +129,7 @@
                   <p
                     class="text-lg font-semibold text-gray-700 dark:text-gray-200"
                   >
-                    35
+                   {{$tenants}}
                   </p>
                 </div>
               </div>
