@@ -25,7 +25,7 @@ class PengelolaController extends Controller
         return view('pengelola', [
             "title" => "Data Pengelola",
             "active" => 'pengelola',
-            "pengelolas" => $pengelolas->get()
+            "pengelolas" => $pengelolas->paginate(5)
         ]);
     }
 
