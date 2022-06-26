@@ -34,14 +34,14 @@ class="z-0 flex-shrink-0 hidden w-64 overflow-y-auto bg-white dark:bg-gray-800 m
     </li>
     </ul> --}}
     <ul class="mt-8">
-   
+
     <li class="relative px-6 py-3">
         <span
-        class="absolute inset-y-0 left-0 w-1 {{ ($active === "home") ? "bg-purple-600" : "" }} rounded-tr-lg rounded-br-lg"
+        class="absolute inset-y-0 left-0 w-1 {{ ($active === "dashboard") ? "bg-purple-600" : "" }} rounded-tr-lg rounded-br-lg"
         aria-hidden="true"
         ></span>
         <a
-        class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 {{ ($active === "home") ? "dark:text-gray-100 " : "" }}"
+        class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 {{ ($active === "dashboard") ? "dark:text-gray-100 " : "" }}"
         href="/home"
         >
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
@@ -50,7 +50,7 @@ class="z-0 flex-shrink-0 hidden w-64 overflow-y-auto bg-white dark:bg-gray-800 m
         <span class="ml-4">Dashboard</span>
         </a>
     </li>
-    
+
     <li class="relative px-6 py-3">
         <span
         class="absolute inset-y-0 left-0 w-1 {{ ($active === "pasar") ? "bg-purple-600" : "" }} rounded-tr-lg rounded-br-lg"
