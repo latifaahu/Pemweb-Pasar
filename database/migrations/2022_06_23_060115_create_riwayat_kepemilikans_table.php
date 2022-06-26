@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreignId('pemilik_id_lama');
             $table->foreignId('pemilik_id_baru')->nullable();
             $table->string('created_by');
+             $table->string('edited_by')->nullable();
             $table->timestamps();
         });
     }

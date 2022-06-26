@@ -44,7 +44,6 @@ Route::get('/tenant/{tenant}/view', [TenantController::class, 'info']);
 
 // bagian pemilik
 Route::get('/pemilik', [PemilikController::class, 'index']);
-Route::post('/pemilik', [PemilikController::class, 'store']);
 Route::get('/pemilik/create', [PemilikController::class, 'create']);
 Route::get('/pemilik/{pemilik}/edit', [PemilikController::class, 'edit']);
 Route::put('/pemilik/{pemilik}', [PemilikController::class, 'update']);
@@ -67,8 +66,9 @@ Route::get('/modals', function () {
 });
 
 Route::get('/riwayat-kepemilikan', [RiwayatKepemilikanController::class, 'index']);
-Route::post('/riwayat-kepemilikan', [RiwayatKepemilikanController::class, 'store']);
-Route::get('/riwayat-kepemilikan/create', [RiwayatKepemilikanController::class, 'create']);
+Route::get('/riwayat-kepemilikan/{tenant}/create', [TenantController::class, 'createKepemilikan']);
+Route::put('/riwayat-kepemilikan/{kepemilikan}', [RiwayatKepemilikanController::class, 'update']);
+Route::get('/riwayat-kepemilikan/{kepemilikan}/view', [RiwayatKepemilikanController::class, 'info']);
 
 Route::get('/riwayat-iuran', [RiwayatIuranController::class, 'index']);
 Route::post('/riwayat-iuran', [RiwayatIurancontroller::class, 'store']);

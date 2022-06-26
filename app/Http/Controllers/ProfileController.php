@@ -20,7 +20,7 @@ class ProfileController extends Controller
     }
     public function edit(User $user)
     {
-      
+
         $user = User::where('id', $user->id)->first();
         return view('profile.edit-user', [
             "title" => "Edit User",
@@ -39,7 +39,7 @@ class ProfileController extends Controller
             'name' => request('name'),
         ]);
 
-        return redirect('/profile')->with('status', 'Profile berhasil dihapus!');
+        return redirect('/profile')->with('status', 'Profile berhasil diupdate!');
     }
 
 }

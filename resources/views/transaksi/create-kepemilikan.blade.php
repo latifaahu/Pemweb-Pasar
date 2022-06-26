@@ -4,41 +4,38 @@
 
 <main class="h-full pb-16 overflow-y-auto">
     <div class="container grid px-6 mx-auto">
-        <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">Transaksi Tenant</h2>
+        <div class="flex my-6">
+            @include('components.back-btn', ['url' => 'riwayat-kepemilikan'])
+            <h2 class="text-2xl font-semibold text-gray-700 dark:text-gray-200">Transaksi Tenant</h2>
+        </div>
 
         <div class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
-            <form method="POST" action="/riwayat-kepemilikan">
+            <form method="POST" action="/riwayat-kepemilikan/{{ $kepemilikan->id }}">
 
+                @method('PUT')
                 @csrf
                 <div class="mb-4">
                     <label class="block mt-4 text-sm" for="pasar">
                         <span class="text-gray-700 dark:text-gray-400">
                         Nama Pasar
                         </span>
-                        <select name="pasar" id="pasar"
-                        class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
-                        required >
-                        <option disabled selected>Pilih pasar </option>
-                            @foreach ($pasars as $pasar)
-                                <option value="{{$pasar->id}}" class="w-full rounded-lg bg-grey-200 form-control dynamic" data-dependent="tenant">{{$pasar->nama_pasar}}</option>
-                            @endforeach
-                        </select>
+                        <input
+                            class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:ring border-purple-400 focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input rounded-md h-8 px-3 py-4 border border-solid"
+                            id="pasar" name="pasar" value="{{ $kepemilikan->tenant->pasar->nama_pasar }}" disabled
+                        />
                     </label>
                 </div>
-
                 <div class="mb-4">
-                    <label class="block text-sm" for="tenant">
-                        <span class="text-gray-700 dark:text-gray-400 mb-3">Nama Tenant</span>
-                        <select name="tenant" id="tenant"
-                        class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray form-control dynamic"
-                        required data-dependent="pemiliklama">
-                            @foreach ($pasars as $pasar)
-                                <option value="{{$pasar->tenant->id}}" class="w-full rounded-lg bg-grey-200" >{{$pasar->tenant->nama_tenant}}</option>
-                            @endforeach
-                        </select>
+                    <label class="block mt-4 text-sm" for="tenant">
+                        <span class="text-gray-700 dark:text-gray-400">
+                        Nama Tenant
+                        </span>
+                        <input
+                            class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:ring border-purple-400 focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input rounded-md h-8 px-3 py-4 border border-solid"
+                            id="tenant" name="tenant" value="{{ $kepemilikan->tenant->nama_tenant }}" disabled
+                        />
                     </label>
                 </div>
-
                 <div class="mb-4">
                     <label class="block mt-4 text-sm" for="pemiliklama">
                         <span class="text-gray-700 dark:text-gray-400">
@@ -46,17 +43,16 @@
                         </span>
                         <input
                             class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:ring border-purple-400 focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input rounded-md h-8 px-3 py-4 border border-solid"
-                            id="pemiliklama" name="pemiliklama" value="{{ $pasars->tenant->pemilik->nama }}" disable
+                            id="pemiliklama" name="pemiliklama" value="{{ $kepemilikan->pemilikLama->nama }}" disabled
                         />
                     </label>
                 </div>
-
                 <div class="mb-4">
                     <label class="block mt-4 text-sm" for="pemilikbaru">
                         <span class="text-gray-700 dark:text-gray-400">
                         Nama Pemilik Baru
                         </span>
-                        <select name="pemilik" id="pemilik"
+                        <select name="pemilikbaru" id="pemilikbaru"
                         class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
                         required >
                             @foreach ($pemiliks as $pemilik)
@@ -67,8 +63,17 @@
                 </div>
 
                 <div class="hidden">
+                    <label class="block mt-4 text-sm" for="tenant_baru">
+                        <input
+                            class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:ring border-purple-400 focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input rounded-md h-8 px-3 py-4 border border-solid"
+                            id="tenant_baru" name="tenant_baru" value="{{ $kepemilikan->tenant->id }}"
+                        />
+                    </label>
+                </div>
+
+                <div class="hidden">
                     <label class="block mt-4 text-sm" for="created_by">
-                        <input id="created_by" name="created_by" value="latifah"/>
+                        <input id="created_by" name="created_by" value="{{ Auth::user()->name }}"/>
                     </label>
                 </div>
 

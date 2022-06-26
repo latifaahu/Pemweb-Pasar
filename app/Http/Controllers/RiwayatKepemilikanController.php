@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Pasar;
 use App\Models\Pemilik;
 use App\Models\RiwayatKepemilikan;
+use App\Models\Tenant;
 use Illuminate\Http\Request;
 
 class RiwayatKepemilikanController extends Controller
@@ -12,31 +13,53 @@ class RiwayatKepemilikanController extends Controller
     //
     public function index() {
 
-        $kepemilikans = RiwayatKepemilikan::latest();
+        $tenants = Tenant::latest();
 
         // untuk mwngambil keyword yang dimasukkan dalam search box
         if(request('search')) {
-            $kepemilikans->where('nama_pasar', 'like', '%' . request('search') . '%')
+            $tenants->where('nama_pasar', 'like', '%' . request('search') . '%')
             ->orWhere('alamat', 'like', '%' . request('search') . '%');
         }
 
         return view('transaksi.riwayat-kepemilikan', [
             "title" => "Riwayat Kepemilikan",
             "active" => 'riwayat kepemilikan',
-            "kepemilikans" => $kepemilikans->get()
+            "tenants" => $tenants->paginate(5)
         ]);
     }
 
-    public function create()
+    public function update(RiwayatKepemilikan $kepemilikan)
     {
-        $pasars = Pasar::get();
-        $pemiliks = Pemilik::get();
+        request()->validate([
+            'pemilikbaru' => 'required',
+        ]);
 
-        return view('transaksi.create-kepemilikan', [
+        $kepemilikan->update([
+            'pemilik_id_baru' => request('pemilikbaru'),
+            'edited_by' => request('created_by')
+        ]);
+
+        RiwayatKepemilikan::Create([
+            'tenant_id' => request('tenant_baru'),
+            'pemilik_id_lama' => request('pemilikbaru'),
+            'created_by' => request('created_by')
+        ]);
+
+        return redirect('/riwayat-kepemilikan')->with('status', 'Transaksi berhasil');
+    }
+
+    public function info(RiwayatKepemilikan $kepemilikan)
+    {
+
+        $histori = RiwayatKepemilikan::join('pemiliks', 'pemiliks.id', '=', 'riwayat_kepemilikans.pemilik_id_lama')
+                ->select('pemiliks.nama','riwayat_kepemilikans.created_at')
+                ->where('tenant_id',$kepemilikan['tenant_id'])->latest();
+
+        return view('transaksi.info-kepemilikan', [
             "title" => "Riwayat Kepemilikan",
             "active" => 'riwayat kepemilikan',
-            "pasars" => $pasars,
-            "pemiliks" => $pemiliks
+            "kepemilikan" => $kepemilikan,
+            "histori" => $histori->paginate(5)
         ]);
     }
 

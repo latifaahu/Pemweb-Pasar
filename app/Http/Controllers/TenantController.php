@@ -149,4 +149,17 @@ class TenantController extends Controller
         return $pdf->download('tenant-info.pdf');
     }
 
+    public function createKepemilikan(Tenant $tenant)
+    {
+        $pemiliks = Pemilik::get();
+        $kepemilikan = RiwayatKepemilikan::where('tenant_id', '=', $tenant['id'])->latest()->first();
+
+        return view('transaksi.create-kepemilikan', [
+            "title" => "Riwayat Kepemilikan",
+            "active" => 'riwayat kepemilikan',
+            "kepemilikan" => $kepemilikan,
+            'pemiliks' => $pemiliks
+        ]);
+    }
+
 }
