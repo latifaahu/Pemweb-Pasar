@@ -50,11 +50,11 @@ class PengelolaController extends Controller
         ]);
 
         if(Pengelola::where('user_id', '=', request('user')) -> exists()) {
-            return redirect('/pengelola')->with('status', 'Gagal ditambahkan! Pengelola sudah ditugaskan di pasar lain');
+            return redirect('/pengelola')->with('fail', 'Gagal ditambahkan! Pengelola sudah ditugaskan di pasar lain');
         }
 
         if(Pengelola::where('pasar_id', '=', request('pasar')) -> exists()) {
-            return redirect('/pengelola')->with('status', 'Gagal ditambahkan! Pasar sudah memiliki pengelola');
+            return redirect('/pengelola')->with('fail', 'Gagal ditambahkan! Pasar sudah memiliki pengelola');
         }
 
         Pengelola::firstOrCreate([

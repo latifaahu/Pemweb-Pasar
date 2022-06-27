@@ -83,6 +83,7 @@ Route::get('/pengelola/cetak-pengelola', [PengelolaController::class, 'cetakPeng
 Route::get('/tenant/cetak-tenant', [TenantController::class, 'cetakTenantAll']);
 Route::get('/tenant/{tenant}/cetak-tenant', [TenantController::class, 'cetakTenantSingle']);
 Route::get('/pemilik/cetak-pemilik', [PemilikController::class, 'cetakPemilikAll']);
+Route::get('/pemilik/{pemilik}/cetak-pemilik', [PemilikController::class, 'cetakPemilikSingle']);
 Route::get('/riwayat-kepemilikan/cetak-riwayat-kepemilikan', [RiwayatKepemilikanController::class, 'cetakRiwayatAll']);
 
 Route::group(array('prefix'=>'user'), function(){

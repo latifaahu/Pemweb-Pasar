@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Pemilik;
 use App\Models\Tenant;
 use Illuminate\Http\Request;
+use PDF;
 
 class PemilikController extends Controller
 {
@@ -111,6 +112,12 @@ class PemilikController extends Controller
             "title" => "Cetak Data Pemilik",
             "pemiliks" => $pemiliks
         ]);
+    }
+
+    public function cetakPemilikSingle(Pemilik $pemilik) {
+
+        $pdf = PDF::loadView('cetak.pemilik-single', compact(['pemilik']));
+        return $pdf->download('pemilik-info.pdf');
     }
 
 }
