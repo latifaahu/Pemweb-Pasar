@@ -43,5 +43,20 @@ class PasarSeeder extends Seeder
             "alamat" =>"Jalan Sungai Serang I No.313, Kecamatan Pasar Kliwon, Kota Surakarta",
             "created_by" => "Latifah"
         ]);
+        Pasar::firstOrCreate([
+            "nama_pasar" => "Pasar Nusukan",
+            "alamat" =>"Jl. Kapten Piere Tendean No.87b, Nusukan, Kec. Banjarsari, Kota Surakarta, Jawa Tengah 57135",
+            "created_by" => "Hilmy"
+        ]);
+        Pasar::firstOrCreate([
+            "nama_pasar" => "Pasar Legi",
+            "alamat" =>"Jl. Letjen S. Parman No.19, Setabelan, Kec. Banjarsari, Kota Surakarta, Jawa Tengah 57133",
+            "created_by" => "Hilmy"
+        ]);
+        Pasar::firstOrCreate([
+            "nama_pasar" => "Pasar Kliwon",
+            "alamat" =>"Jl. Kapten Mulyadi No.110, Kedung Lumbu, Kota Surakarta, Jawa Tengah 57133, Indonesia.",
+            "created_by" => "Hilmy"
+        ]);
     }
 }

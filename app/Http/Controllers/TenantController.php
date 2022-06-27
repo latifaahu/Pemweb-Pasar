@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Pasar;
 use App\Models\Tenant;
 use App\Models\Pemilik;
+use App\Models\RiwayatIuran;
 use App\Models\RiwayatKepemilikan;
 use Illuminate\Http\Request;
 use PDF;
@@ -159,6 +160,18 @@ class TenantController extends Controller
             "active" => 'riwayat kepemilikan',
             "kepemilikan" => $kepemilikan,
             'pemiliks' => $pemiliks
+        ]);
+    }
+
+    public function createIuran(Tenant $tenant)
+    {
+        // $iuran = RiwayatIuran::where('tenant_id', '=', $tenant['id'])->latest()->first();
+
+        // dd($tenant);
+        return view('transaksi.create-iuran', [
+            "title" => "Riwayat Kepemilikan",
+            "active" => 'riwayat kepemilikan',
+            "tenant" => $tenant,
         ]);
     }
 

@@ -72,8 +72,9 @@ Route::put('/riwayat-kepemilikan/{kepemilikan}', [RiwayatKepemilikanController::
 Route::get('/riwayat-kepemilikan/{kepemilikan}/view', [RiwayatKepemilikanController::class, 'info']);
 
 Route::get('/riwayat-iuran', [RiwayatIuranController::class, 'index']);
-Route::post('/riwayat-iuran', [RiwayatIurancontroller::class, 'store']);
-Route::get('/riwayat-iuran/create', [RiwayatIuranController::class, 'create']);
+Route::get('/riwayat-iuran/{tenant}/create', [TenantController::class, 'createIuran']);
+Route::post('/riwayat-iuran', [RiwayatIuranController::class, 'store']);
+Route::get('/riwayat-iuran/{iuran}/view', [RiwayatIuranController::class, 'info']);
 
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

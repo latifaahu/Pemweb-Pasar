@@ -15,54 +15,12 @@
                         <span class="text-gray-700 dark:text-gray-400">
                         Nama Tenant
                         </span>
-                        <select name="tenant" id="tenant"
-                        class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
-                        required >
-                            @foreach ($tenants as $tenant)
-                                <option value="{{$tenant->id}}" class="w-full rounded-lg bg-grey-200" >{{$tenant->nama_tenant}}</option>
-                            @endforeach
-                        </select>
-                    </label>
-                </div>
-                <div class="mb-4">
-                    <label class="block mt-4 text-sm" for="tenant">
-                        <span class="text-gray-700 dark:text-gray-400">
-                        Nama Pemilik
-                        </span>
-                        <select name="tenant" id="tenant"
-                        class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
-                        required >
-                            @foreach ($tenants as $tenant)
-                                <option value="{{$tenant->pemilik->id}}" class="w-full rounded-lg bg-grey-200" >{{$tenant->pemilik->nama}}</option>
-                            @endforeach
-                        </select>
-                    </label>
-                </div>
-
-                {{-- <div class="mb-4">
-                    <label class="block text-sm" for="tenant">
-                        <span class="text-gray-700 dark:text-gray-400 mb-3">Nama Tenant</span>
-                        <select name="tenant" id="tenant"
-                        class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
-                        required >
-                            @foreach ($pasars as $pasar)
-                                <option value="{{$pasar->tenant->id}}" class="w-full rounded-lg bg-grey-200" >{{$pasar->tenant->nama_tenant}}</option>
-                            @endforeach
-                        </select>
-                    </label>
-                </div> --}}
-
-                {{-- <div class="mb-4">
-                    <label class="block mt-4 text-sm" for="pemiliklama">
-                        <span class="text-gray-700 dark:text-gray-400">
-                        Nama Pemilik Lama
-                        </span>
                         <input
                             class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:ring border-purple-400 focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input rounded-md h-8 px-3 py-4 border border-solid"
-                            id="pemiliklama" name="pemiliklama" value="{{ $pasars->tenant->pemilik->nama }}" disable
+                            id="tenant" name="tenant" value="{{ $tenant->nama_tenant }}" disabled
                         />
                     </label>
-                </div> --}}
+                </div>
 
                 <div class="mb-4">
                     <label class="block text-sm" for="tahun_bulan">
@@ -73,7 +31,7 @@
                         />
                     </label>
                 </div>
-                
+
                 <div class="mb-4">
                     <label class="block text-sm" for="jml_bayar">
                         <span class="text-gray-700 dark:text-gray-400 mb-3">Jumlah Bayar</span>
@@ -93,9 +51,15 @@
                     </label>
                 </div>
 
+
+                <div class="hidden">
+                    <label class="block mt-4 text-sm" for="tenantbaru">
+                        <input id="tenantbaru" name="tenantbaru" value="{{ $tenant->id }}"/>
+                    </label>
+                </div>
                 <div class="hidden">
                     <label class="block mt-4 text-sm" for="created_by">
-                        <input id="created_by" name="created_by" value="latifah"/>
+                        <input id="created_by" name="created_by" value="{{ Auth::user()->name }}"/>
                     </label>
                 </div>
 

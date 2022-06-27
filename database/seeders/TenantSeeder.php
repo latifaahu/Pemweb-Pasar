@@ -43,6 +43,69 @@ class TenantSeeder extends Seeder
             "latitude" => "110.83207330048376",
             "created_by" => "Latifah"
         ]);
+        Tenant::firstOrCreate([
+            "pasar_id" => 2,
+            "nama_tenant" => "Kios Emas Bu Bambang",
+            "pemilik_id" => 1,
+            "biaya_iuran" => 1000000,
+            "longitude" => "-7.568726990848964",
+            "latitude" => "110.83207330048376",
+            "created_by" => "Hilmy"
+        ]);
+        Tenant::firstOrCreate([
+            "pasar_id" => 4,
+            "nama_tenant" => "Kios Sayur Pak Jumad",
+            "pemilik_id" => 3,
+            "biaya_iuran" => 1000000,
+            "longitude" => "-7.568726990848964",
+            "latitude" => "110.83207330048376",
+            "created_by" => "Hilmy"
+        ]);
+        Tenant::firstOrCreate([
+            "pasar_id" => 5,
+            "nama_tenant" => "Kios Sayur Pak Lehor",
+            "pemilik_id" => 3,
+            "biaya_iuran" => 1000000,
+            "longitude" => "-7.568726990848964",
+            "latitude" => "110.83207330048376",
+            "created_by" => "Hilmy"
+        ]);
+        Tenant::firstOrCreate([
+            "pasar_id" => 6,
+            "nama_tenant" => "Kios Buah Pak Junedi",
+            "pemilik_id" => 4,
+            "biaya_iuran" => 1000000,
+            "longitude" => "-7.568726990848964",
+            "latitude" => "110.83207330048376",
+            "created_by" => "Hilmy"
+        ]);
+        Tenant::firstOrCreate([
+            "pasar_id" => 6,
+            "nama_tenant" => "Warung Bakso Aan",
+            "pemilik_id" => 5,
+            "biaya_iuran" => 1000000,
+            "longitude" => "-7.568726990848964",
+            "latitude" => "110.83207330048376",
+            "created_by" => "Hilmy"
+        ]);
+        Tenant::firstOrCreate([
+            "pasar_id" => 3,
+            "nama_tenant" => "Warung Mi Ayam Mansyur Bersaudara",
+            "pemilik_id" => 3,
+            "biaya_iuran" => 1000000,
+            "longitude" => "-7.568726990848964",
+            "latitude" => "110.83207330048376",
+            "created_by" => "Latifah"
+        ]);
+        Tenant::firstOrCreate([
+            "pasar_id" => 4,
+            "nama_tenant" => "Warung Mi Ayam Pangsit Rahmat",
+            "pemilik_id" => 4,
+            "biaya_iuran" => 1000000,
+            "longitude" => "-7.568726990848964",
+            "latitude" => "110.83207330048376",
+            "created_by" => "Latifah"
+        ]);
         RiwayatKepemilikan::firstOrCreate([
             "tenant_id" => 1,
             "pemilik_id_lama" => 1,

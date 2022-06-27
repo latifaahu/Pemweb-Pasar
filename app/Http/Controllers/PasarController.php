@@ -37,7 +37,6 @@ class PasarController extends Controller
     }
 
     public function store(Request $request) {
-
         $request->validate([
             'nama' => 'required|max:255|min:2',
             'alamat' => 'required'

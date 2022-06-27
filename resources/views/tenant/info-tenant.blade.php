@@ -56,10 +56,10 @@
                     <tr class="h-4"><td></td></tr>
                     <tr>
                         <th class="font-semibold">Riwayat</th>
-                        <td>: <a href="/riwayat-kepemilikan">Riwayat Kepemilikan</a><br>
+                        <td>: <a href="/riwayat-kepemilikan/{{ $tenant->id }}/view">Riwayat Kepemilikan</a><br>
                     </tr>
                         <th class="font-semibold"></th>
-                        <td>: <a href="/riwayat-iuran">Riwayat Iuran</a><br>
+                        <td>: <a href="/riwayat-iuran/{{ $tenant->id }}/view">Riwayat Iuran</a><br>
                     <tr class="h-4"><td></td></tr>
                     <tr>
                         <th class="font-semibold">Dibuat oleh</th>

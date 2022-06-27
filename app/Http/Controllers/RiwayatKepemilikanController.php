@@ -47,8 +47,7 @@ class RiwayatKepemilikanController extends Controller
         $tenant = Tenant::where('id',request('tenant_baru'))->first();
         $tenant->update([
             'pemilik_id' => request('pemilikbaru'),
-            'edited_by' => request('created_by'),
-            'updated_at' =>  request('updated_at')
+            'edited_by' => request('created_by')
         ]);
 
         return redirect('/riwayat-kepemilikan')->with('status', 'Transaksi berhasil');
