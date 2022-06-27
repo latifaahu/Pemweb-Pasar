@@ -17,8 +17,7 @@ class RiwayatKepemilikanController extends Controller
 
         // untuk mwngambil keyword yang dimasukkan dalam search box
         if(request('search')) {
-            $tenants->where('nama_pasar', 'like', '%' . request('search') . '%')
-            ->orWhere('alamat', 'like', '%' . request('search') . '%');
+            $tenants->where('nama_tenant', 'like', '%' . request('search') . '%');
         }
 
         return view('transaksi.riwayat-kepemilikan', [
@@ -43,6 +42,13 @@ class RiwayatKepemilikanController extends Controller
             'tenant_id' => request('tenant_baru'),
             'pemilik_id_lama' => request('pemilikbaru'),
             'created_by' => request('created_by')
+        ]);
+
+        $tenant = Tenant::where('id',request('tenant_baru'))->first();
+        $tenant->update([
+            'pemilik_id' => request('pemilikbaru'),
+            'edited_by' => request('created_by'),
+            'updated_at' =>  request('updated_at')
         ]);
 
         return redirect('/riwayat-kepemilikan')->with('status', 'Transaksi berhasil');
