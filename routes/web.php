@@ -44,6 +44,7 @@ Route::get('/tenant/{tenant}/view', [TenantController::class, 'info']);
 
 // bagian pemilik
 Route::get('/pemilik', [PemilikController::class, 'index']);
+Route::post('/pemilik', [PemilikController::class, 'store']);
 Route::get('/pemilik/create', [PemilikController::class, 'create']);
 Route::get('/pemilik/{pemilik}/edit', [PemilikController::class, 'edit']);
 Route::put('/pemilik/{pemilik}', [PemilikController::class, 'update']);
