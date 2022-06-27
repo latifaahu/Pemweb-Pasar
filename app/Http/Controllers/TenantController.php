@@ -95,7 +95,7 @@ class TenantController extends Controller
         request()->validate([
             'nama' => 'required|max:255|min:2',
             'pasar' => 'required',
-            'pemilik' => 'required',
+            // 'pemilik' => 'required',
             'biaya_iuran' => 'required|integer',
             'longitude' => 'required',
             'latitude' => 'required'
@@ -104,7 +104,7 @@ class TenantController extends Controller
         $tenant->update([
             'nama_tenant' => request('nama'),
             'pasar_id' => request('pasar'),
-            'pemilik_id' =>  request('pemilik'),
+            // 'pemilik_id' =>  request('pemilik'),
             'biaya_iuran' =>(int) request('biaya_iuran'),
             'edited_by' => request('edited_by'),
             'longitude' => request('longitude'),

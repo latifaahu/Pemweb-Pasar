@@ -106,6 +106,7 @@ class TenantSeeder extends Seeder
             "latitude" => "110.83207330048376",
             "created_by" => "Latifah"
         ]);
+
         RiwayatKepemilikan::firstOrCreate([
             "tenant_id" => 1,
             "pemilik_id_lama" => 1,
@@ -121,5 +122,41 @@ class TenantSeeder extends Seeder
             "pemilik_id_lama" => 2,
             "created_by" => "Latifah"
         ]);
+        RiwayatKepemilikan::firstOrCreate([
+            "tenant_id" => 4,
+            "pemilik_id_lama" => 1,
+            "created_by" => "Latifah"
+        ]);
+        RiwayatKepemilikan::firstOrCreate([
+            "tenant_id" => 5,
+            "pemilik_id_lama" => 3,
+            "created_by" => "Latifah"
+        ]);
+        RiwayatKepemilikan::firstOrCreate([
+            "tenant_id" => 6,
+            "pemilik_id_lama" => 3,
+            "created_by" => "Latifah"
+        ]);
+        RiwayatKepemilikan::firstOrCreate([
+            "tenant_id" => 7,
+            "pemilik_id_lama" => 4,
+            "created_by" => "Latifah"
+        ]);
+        RiwayatKepemilikan::firstOrCreate([
+            "tenant_id" => 8,
+            "pemilik_id_lama" => 5,
+            "created_by" => "Latifah"
+        ]);
+        RiwayatKepemilikan::firstOrCreate([
+            "tenant_id" => 9,
+            "pemilik_id_lama" => 3,
+            "created_by" => "Latifah"
+        ]);
+        RiwayatKepemilikan::firstOrCreate([
+            "tenant_id" => 10,
+            "pemilik_id_lama" => 4,
+            "created_by" => "Latifah"
+        ]);
+
     }
 }
